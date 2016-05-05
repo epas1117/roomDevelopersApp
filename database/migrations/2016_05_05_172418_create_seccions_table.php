@@ -16,10 +16,8 @@ class CreateSeccionsTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->integer('tutorial_id')->unsigned();
-            
             $table->foreign('tutorial_id')->references('id')->on('tutoriales');
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +28,6 @@ class CreateSeccionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('seccions');
+        Schema::drop('secciones');
     }
 }

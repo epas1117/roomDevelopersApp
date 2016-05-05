@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTutorialesTable extends Migration
+class CreateTutorialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateTutorialesTable extends Migration
         Schema::create('tutoriales', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
-            $table->string('desripcion');
+            $table->string('descripcion');
             $table->string('autor');
             $table->integer('categoria_id')->unsigned();
             $table->foreign('categoria_id')->references('id')->on('categorias');
