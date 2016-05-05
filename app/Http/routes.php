@@ -14,3 +14,4 @@
 Route::get('/', 'FrontController@index');
 Route::get('admin', 'FrontController@admin');
 Route::resource('usuario', 'UsuarioController');
+Route::resource('seccion', 'SeccionController');
