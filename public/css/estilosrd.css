@@ -1,18 +1,45 @@
 header {
-    background: #2c3e50;
-    color: #fff;
+    background: #000000;
+    color: #403d50;
 }
 
-.jumbotron {
-    background-color: #00CC99;
-    /* margen del jumbotron principal*/
+
+h3{
+    font-family: 'Indie Flower', cursive;
+
+}
+
+@-webkit-keyframes movimiento-diagonal {
+     from {
+         left: 0px;
+     }
+     to {
+         left: 100px;
+     }
+ }
+#anim {
+    -webkit-animation-name: movimiento-diagonal;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;/*para que vuelva a su posicion inicial */
+    width: 100px;
+    background-color: Teal;
     color: #fff;
+    position: relative;
+    padding: 2px;
+}
+
+
+.jumbotron {
+    background-color: #abe1fd;
+    /* margen del jumbotron principal*/
+    color: #403d50;
     padding: 20px 0;
 
 }
 
 .main {
-    background: #f2f2f2;
+    background: #ddf1e8;
     margin-top: 20px;
     margin-bottom: 20px;
 }
