@@ -2,7 +2,14 @@
 
 namespace Cinema\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Cinema\Http\Controllers\Controller;
+use Cinema\Seccion;
+use Cinema\Http\Request;
+
+use Session;
+
+
+
 
 use Cinema\Http\Requests;
 
@@ -15,8 +22,11 @@ class SeccionController extends Controller
      */
     public function index()
     {
-        return view('seccion.index');
-    }
+
+        $secciones=Seccion::ALL();
+
+        return view('seccion.index',compact('secciones'));
+}
 
     /**
      * Show the form for creating a new resource.
