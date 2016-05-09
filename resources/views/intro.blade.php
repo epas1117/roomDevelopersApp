@@ -3,7 +3,7 @@
 
 <!--Aqui va jumbotron -->
 <div class="jumbotron" >
-<h3>SEE OUR INTRODUCTION VIDEO</h3>
+<h3 id="anim">SEE OUR INTRODUCTION VIDEO</h3>
 </div>
 <!--Container ayuda a centrar todas las cosas, Carga Video columna de 6 -->
 <div class="row">
