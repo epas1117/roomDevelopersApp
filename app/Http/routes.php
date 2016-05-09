@@ -18,3 +18,4 @@ Route::resource('tutorial', 'TutorialController');
 Route::resource('seccion', 'SeccionController');
 
 //Rutas Videos
+Route::resource('video','VideoController');
