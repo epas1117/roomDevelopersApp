@@ -2,8 +2,12 @@
 
 namespace Cinema\Http\Controllers;
 
+
+use Cinema\Categoria;
 use Illuminate\Http\Request;
 use Cinema\Http\Requests;
+use Cinema\Tutorial;
+use Illuminate\Support\Facades\DB;
 
 class TutorialController extends Controller
 {
@@ -14,8 +18,29 @@ class TutorialController extends Controller
      */
     public function index()
     {
-        return view('tutorial.index');
+        $tutoriales = Tutorial::all();
+        $categorias = Categoria::all();
+        return view('tutorial.index', array('tutoriales' => $tutoriales, 'categorias' => $categorias));
     }
+
+    public function filterCategoria($categoria_id)
+    {
+        //$tutoriales = DB::table('tutoriales')->where('categoria_id', '=', $categoria_id)->get();
+        $tutoriales = Tutorial::where('categoria_id', '=', $categoria_id)->get();
+        $categorias = Categoria::all();
+        return view('tutorial.index', array('tutoriales' => $tutoriales, 'categorias' => $categorias));
+    }
+
+    public function filterTitulo(Request $request)
+    {
+        $query = $request->input('buscar');
+        //$tutoriales = DB::table('tutoriales')->where('categoria_id', '=', $categoria_id)->get();
+        $tutoriales = Tutorial::where('titulo', 'like', '%' . $query . '%')->get();
+        $categorias = Categoria::all();
+        return view('tutorial.index', array('tutoriales' => $tutoriales, 'categorias' => $categorias));
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +60,7 @@ class TutorialController extends Controller
      */
     public function store(Request $request)
     {
-        return view('tutorial.index');
+
     }
 
     /**
@@ -46,7 +71,7 @@ class TutorialController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('seccion.index');
     }
 
     /**
