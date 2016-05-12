@@ -12,11 +12,10 @@
 
                     <input name="email" type="text" class="form-control" placeholder="Email...">
                     <input name="password" type="password" class="form-control" placeholder="Password...">
-                    <input name="repassword" type="password" class="form-control" placeholder="ConfirmPassword...">
 
-                                <button class="btn btn-default" type="submit">
-                                    Enter
-                                </button>
+                    <button class="btn btn-default" type="submit">
+                        Enter
+                    </button>
 
                 </div>
                 {!!Form::close()!!}
