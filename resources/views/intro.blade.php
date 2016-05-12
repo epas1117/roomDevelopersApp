@@ -16,8 +16,7 @@
     <!--Container ayuda a centrar todas las cosas, Carga Video columna de 6 -->
     <section class="videoPrincipal  col-md-6" >
         <h1 align="center" id="oSolo">Or just...</h1>
-        <a href="#" class="btn btn-default" id="botonInicio">START</a>
-
+        <a  href="#" class="btn btn-default" id="botonInicio"  >START</a>
 
     </section>
 

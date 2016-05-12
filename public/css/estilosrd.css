@@ -194,45 +194,31 @@ aside {
       font-weight: 900;
     }
 
-
     #botonInicio{
-       margin-left: 150px;
+        margin-left: 150px;
         margin-top: 100px;
+        padding-top: 35px;
         font-weight: bold;
         width:400px;
         height:100px;
-        color: #fff;
-        font-family: sans-serif;
+        background-color:#007fff;
         font-size: 24px;
-        font-weight: bold;
-        padding: 15px 25px;
         margin-right: 30px;
         cursor: pointer;
         border: 0;
-        border-radius: 30px;
-
+        border-radius: 100px;
+        color:#ffffff;
         /* propiedades para la animacion del boton */
-
         transition: all 0.20s linear;
         -webkit-transition: all 0.20s linear;
         -moz-transition: all 0.20s linear;
         position: relative;
-        box-shadow: 0px 20px 0 #173e43;
+        box-shadow: 0px 25px 0 #173e43;
     }
-
     #botonInicio:active {
-        /* Posicion del boton al clickearlo */
-        bottom: -10px;
-        box-shadow:0 0 0 #173e43, inset 0 0 10px #173e43;
-    }
-    #oSolo{
-
-        position: relative;
-        animation: botar 3s 2000ms normal;
-        -webkit-animation:botar 3s 2000ms normal;
-        -moz-animation:botar 3s 2000ms normal;
-        -ms-animation:botar 3s 2000ms normal;
-        -o-animation:botar 3s 2000ms normal;
+        /* Posicion del boton al clickearlo y la sombra al click*/
+        bottom: -12px;
+        box-shadow:0 0 0 #F0FFF0, inset 0 0 10px #F0FFF0;
     }
 
 
