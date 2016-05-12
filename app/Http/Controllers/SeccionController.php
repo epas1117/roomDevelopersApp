@@ -2,8 +2,10 @@
 
 namespace Cinema\Http\Controllers;
 
+
 use Cinema\Http\Controllers\Controller;
 use Cinema\Seccion;
+use Cinema\Video;
 use Cinema\Http\Request;
 
 use Session;
@@ -24,8 +26,10 @@ class SeccionController extends Controller
     {
 
         $secciones=Seccion::ALL();
-
-        return view('seccion.index',compact('secciones'));
+        //foreach ($secciones as $seccion);
+        //$videos=Video::where('seccion_id', '=', $seccion->id)->get();;
+        $videos=Video::ALL();
+        return view('seccion.index',compact('secciones','videos'));
 }
 
     /**

@@ -2,24 +2,41 @@
 @section('content')
 
 
-<table class="table">
-    <thread>
-        <th>id</th>
-        <th>titulo</th>
-        <th>tutorial_id</th>
-    </thread>
-    @foreach($secciones as $seccion)
-        <tbody >
-        <td >{{$seccion->id}} <div id="{{$seccion->id}}" class="collapse">AQUI SE MOSTRARAN DETALLES</div></td>
 
-        <td>{{$seccion->titulo}}</td>
-        <td>{{$seccion->tutorial_id}}</td>
+    <!------------------>
+    <div id="accordion" role="tablist" aria-multiselectable="true">
 
-        <td>
-            <button href="#{{$seccion->id}}" data-toggle="collapse" class="btn-primary">Expandir</button>
+        <div class="panel panel-default">
+            @foreach($secciones as $seccion)
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{$seccion->titulo}}
+                    </a>
+                </h4>
 
-        </td>
-        </tbody>
-    @endforeach
-</table>
+            </div>
+
+
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <!---------------->
+                @foreach($videos as $video)
+                    @if($seccion->id===$video->seccion_id)
+    <p>  {{$video->id}} </p>
+
+       <p> {{$video->titulo}}</p>
+        <p>{{$video->duracion}}</p>
+
+                <!---------------->
+                    @endif
+                @endforeach
+            </div>
+
+        </div>
+
+        @endforeach
+    </div>
+    <!------------------>
+
+
 @endsection
