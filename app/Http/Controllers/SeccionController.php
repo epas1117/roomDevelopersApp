@@ -25,11 +25,7 @@ class SeccionController extends Controller
     public function index()
     {
 
-        $secciones=Seccion::ALL();
-        //foreach ($secciones as $seccion);
-        //$videos=Video::where('seccion_id', '=', $seccion->id)->get();;
-        $videos=Video::ALL();
-        return view('seccion.index',compact('secciones','videos'));
+        
 }
 
     /**
@@ -61,7 +57,8 @@ class SeccionController extends Controller
      */
     public function show($id)
     {
-        //
+
+       
     }
 
     /**

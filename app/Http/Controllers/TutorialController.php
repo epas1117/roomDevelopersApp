@@ -71,7 +71,10 @@ class TutorialController extends Controller
      */
     public function show($id)
     {
-        return view('seccion.index');
+        $tutorial = Tutorial::find($id);
+        return view('tutorial.detalle', ['tutorial' => $tutorial]);
+
+
     }
 
     /**
