@@ -8,6 +8,9 @@
 
     {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::style('css/estilosrd.css')!!}
+    {!!Html::style('https://fonts.googleapis.com/css?family=Alegreya+Sans')!!}
+    {!!Html::style('https://fonts.googleapis.com/css?family=Raleway')!!}
+
 
 </head>
 <body>

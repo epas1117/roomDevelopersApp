@@ -9,14 +9,9 @@ use Cinema\Video;
 
 class VideoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-       $videos=Video::all();
+       $videos=Video::paginate(1);
         
        return view('video.index',compact('videos'));
     }
