@@ -1,6 +1,5 @@
 header {
     background: #3fb0ac;
-
 }
 body{
     font-family: Raleway;
@@ -13,24 +12,23 @@ h3{
 
 }*/
 
+/*Inicia el movimiento colocando desde hasta donde llegara dicho movimiento */
 @-webkit-keyframes movimiento-diagonal {
-     from {
-         left: 0px;
+    from {
+        left: 0px;
+    }to{
+         left: 250px;
      }
-     to {
-         left: 100px;
-     }
- }
+}
+
+/*Pone estilo y movimiento en la animacion */
 #anim {
-    -webkit-animation-name: movimiento-diagonal;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;/*para que vuelva a su posicion inicial */
-    width: 400px;
-    background-color: #dddfd4;
-    color: #173e43;
-    position: relative;
-    padding: 2px;
+    -webkit-animation-name: movimiento-diagonal; /*inicia el movimiento */
+    -webkit-animation-duration: 5s; /*tiempo que se demora en ir y regresar */
+    -webkit-animation-iteration-count: infinite; /*para que siga realizando la iteracion */
+    -webkit-animation-direction: alternate ; /*para que vuelva a su posicion inicial */
+    color: #fff; /*color de la letraS */
+    position: relative; /*para que inicie en una posicion y regrese*/
 }
 
 
@@ -39,9 +37,13 @@ h3{
     /* margen del jumbotron principal*/
 
     padding: 20px 0;
+    position: relative;
 
 }
 
+aside {
+    color: #fff;
+}
 .main {
 
     margin-top: 20px;
@@ -180,6 +182,59 @@ h3{
         position: relative;
         margin-right: 0;
     }
+    #contenedorPerfil{
+        padding: 20px;
+        background-color:#66afe9;
+    }
+    #contenedorVer{
+        padding: 20px;
+        background-color:#2ca02c;
+    }
+    #NegrillasPalabras{
+      font-weight: 900;
+    }
+
+
+    #botonInicio{
+       margin-left: 150px;
+        margin-top: 100px;
+        font-weight: bold;
+        width:400px;
+        height:100px;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 15px 25px;
+        margin-right: 30px;
+        cursor: pointer;
+        border: 0;
+        border-radius: 30px;
+
+        /* propiedades para la animacion del boton */
+
+        transition: all 0.20s linear;
+        -webkit-transition: all 0.20s linear;
+        -moz-transition: all 0.20s linear;
+        position: relative;
+        box-shadow: 0px 20px 0 #173e43;
+    }
+
+    #botonInicio:active {
+        /* Posicion del boton al clickearlo */
+        bottom: -10px;
+        box-shadow:0 0 0 #173e43, inset 0 0 10px #173e43;
+    }
+    #oSolo{
+
+        position: relative;
+        animation: botar 3s 2000ms normal;
+        -webkit-animation:botar 3s 2000ms normal;
+        -moz-animation:botar 3s 2000ms normal;
+        -ms-animation:botar 3s 2000ms normal;
+        -o-animation:botar 3s 2000ms normal;
+    }
+
 
 }
 

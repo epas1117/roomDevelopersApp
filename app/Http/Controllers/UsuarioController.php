@@ -25,6 +25,11 @@ class UsuarioController extends Controller
         $users = User::paginate(2);
         return view('usuario.index', compact('users'));
     }
+    //Muestra el perfil de la pagina lo controla
+    public function mostrarPerfil(){
+        return view('usuario.perfil');
+        
+    }
 
     /**
      * Show the form for creating a new resource.
