@@ -5,7 +5,7 @@
 
 
         <div class="row ">
-            <section class="col-md-12">
+            <section class="col-xs-12">
 
                 <div class="flex-video widescreen">
                     <h1>
@@ -18,7 +18,7 @@
 
         <div class="row">
 
-            <section class="col-md-12">
+            <section class="col-xs-12">
 
                 <div class="flex-video widescreen" align="center">
                     <iframe class="embed-responsive-item" width="1000" height="600" src="{{$video->link}}"
@@ -30,7 +30,7 @@
         </div>
 
         <div class="row ">
-            <section class="col-md-12">
+            <section class="col-xs-12">
 
                 <div class="flex-video widescreen" align="center">
                     <h2 >
