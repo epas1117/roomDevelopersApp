@@ -5,12 +5,10 @@
     <title>roomDevelopers | Main</title>
 
     {!!Html::style('css/bootstrap.css')!!}
-
     {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::style('css/estilosrd.css')!!}
     {!!Html::style('https://fonts.googleapis.com/css?family=Alegreya+Sans')!!}
     {!!Html::style('https://fonts.googleapis.com/css?family=Raleway')!!}
-
 
 
 </head>
@@ -31,13 +29,18 @@
             <!--Inicia menu-->
             <div class="collapse navbar-collapse" id="navegacion-rd">
                 <ul class="nav navbar-nav pull-right">
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#">Sign up</a></li>
+                    @if(!Auth::check())
+                        <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign up</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#logInModal">Log in</a></li>
+                    @else
+                        <li><a href="#" data-toggle="modal" data-target="#signUpModal">{{Auth::user()->name}}</a></li>
+                    @endif
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
 <section class="main container-fluid">
     @yield('content')
 </section>
@@ -46,7 +49,8 @@
 {!!Html::script('js/jquery.min.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}
 {!!Html::script('js/scriptsrd.js')!!}
-
+@include('usuario.signUpModal')
+@include('usuario.logInModal')
 @show
 </body>
 </html>

@@ -3,9 +3,11 @@
 Route::get('/', 'FrontController@index');
 Route::get('admin', 'FrontController@admin');
 
+//Rutas Usuarios
+
 //redireccionar a la pagina perfil
 Route::get('usuario/perfil', ['as' => 'usuario.perfil', 'uses' => 'UsuarioController@mostrarPerfil']);
-//Rutas Usuarios
+Route::post('tutorial/log', ['as' => 'usuario.log', 'uses' => 'UsuarioController@log']);
 Route::resource('usuario', 'UsuarioController');
 
 
@@ -20,4 +22,4 @@ Route::resource('tutorial', 'TutorialController');
 //Rutas Secciones
 Route::resource('seccion', 'SeccionController');
 //Rutas Videos
-Route::resource('video','VideoController');
+Route::resource('video', 'VideoController');

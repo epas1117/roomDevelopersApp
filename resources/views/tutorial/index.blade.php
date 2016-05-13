@@ -11,7 +11,7 @@
                         <input name="buscar" type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
-                                    <i class="fa fa-search"></i>
+                                    <span class="glyphicon glyphicon-search"></span>
                                 </button>
                                 </span>
                     </div>

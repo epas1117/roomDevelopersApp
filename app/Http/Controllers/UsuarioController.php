@@ -7,8 +7,10 @@ use Cinema\User;
 use Cinema\Http\Requests\UserCreaterequest;
 use Cinema\Http\Requests\UserUpdateRequest;
 use Cinema\Http\Requests;
+use Cinema\Http\Requests\LoginRequest;
 use Session;
 use Redirect;
+use Auth;
 use Illuminate\Routing\Route;
 
 class UsuarioController extends Controller
@@ -19,16 +21,27 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //$users = User::onlyTrashed()->paginate(2);
         $users = User::paginate(2);
         return view('usuario.index', compact('users'));
     }
+
     //Muestra el perfil de la pagina lo controla
-    public function mostrarPerfil(){
+    public function mostrarPerfil()
+    {
         return view('usuario.perfil');
-        
+    }
+
+    public function log(LoginRequest $request)
+    {
+        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+            return Redirect::to('tutorial');
+        }
+        Session::flash('message-error', 'Datos son incorrectos');
+        return Redirect::to('/');
     }
 
     /**
@@ -49,14 +62,14 @@ class UsuarioController extends Controller
      */
     public function store(UserCreaterequest $request)
     {
-     //   User::create([
-       //     'name' => $request['name'],
-         //   'email' => $request['email'],
-           // 'password' => $request['password']
+        //   User::create([
+        //     'name' => $request['name'],
+        //   'email' => $request['email'],
+        // 'password' => $request['password']
         //]);
         User::create($request->all());
-        Session::flash('message', 'Usuario guardado correctamente');
-        return redirect('/usuario');
+        Session::flash('message', 'Please log in to continue...');
+        return redirect('/');
     }
 
     /**

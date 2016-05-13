@@ -2,20 +2,14 @@
 
 namespace Cinema\Http\Controllers;
 
-
 use Cinema\Categoria;
 use Illuminate\Http\Request;
 use Cinema\Http\Requests;
 use Cinema\Tutorial;
-use Illuminate\Support\Facades\DB;
 
 class TutorialController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $tutoriales = Tutorial::all();
@@ -33,12 +27,9 @@ class TutorialController extends Controller
 
     public function filterTitulo(Request $request)
     {
-        $query = $request->input('buscar');
-        //$tutoriales = DB::table('tutoriales')->where('categoria_id', '=', $categoria_id)->get();
-        $tutoriales = Tutorial::where('titulo', 'like', '%' . $query . '%')->get();
+        $tutoriales = Tutorial::where('titulo', 'like', '%' . $request->input('buscar') . '%')->get();
         $categorias = Categoria::all();
         return view('tutorial.index', array('tutoriales' => $tutoriales, 'categorias' => $categorias));
-
     }
 
 
