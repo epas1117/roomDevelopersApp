@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>roomDevelopers | Main</title>
+    <title>roomDevelopers</title>
 
     {!!Html::style('css/bootstrap.css')!!}
     {!!Html::style('css/font-awesome.min.css')!!}
@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">roomDevelopers</a>
+                <a href="{{URL::to('/tutorial')}}" class="navbar-brand">roomDevelopers</a>
             </div>
             <!--Inicia menu-->
             <div class="collapse navbar-collapse" id="navegacion-rd">
