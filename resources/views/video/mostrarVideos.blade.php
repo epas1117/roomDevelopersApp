@@ -33,7 +33,7 @@
             <section class="col-xs-12">
 
                 <div class="flex-video widescreen" align="center">
-                    <h2 >
+                    <h2>
                         {{$video->descripcion}}
                     </h2>
 
@@ -42,7 +42,7 @@
         </div>
 
     @endforeach
-    <div  align="center">
+    <div align="center">
         {!!$videos->render()!!}
     </div>
 
