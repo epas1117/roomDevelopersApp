@@ -22,4 +22,5 @@ Route::resource('tutorial', 'TutorialController');
 //Rutas Secciones
 Route::resource('seccion', 'SeccionController');
 //Rutas Videos
+Route::get('video/tutorialVideo/{tutorial_id}', ['as' => 'video.tutorialVideo', 'uses' => 'VideoController@videosPorTutorial']);
 Route::resource('video', 'VideoController');

@@ -1,10 +1,10 @@
 @extends('layouts.master')
 @section('content')
-
-
-
         <!------------------>
 <div id="accordion" role="tablist" aria-multiselectable="true" >
+    <?php
+    $cont=1
+    ?>
     @foreach($tutorial->secciones as $seccion)
         <div class="panel panel-default ">
 
@@ -22,15 +22,20 @@
                 <!---------------->
                 <table class="table ">
                     <tbody>
+
                     @foreach($seccion->videos as $video)
                         <tr>
 
-                            <td><a href="{{$video->link}}"><p> {{$video->titulo}}</p></a></td>
+                            <td> {!!link_to_action('VideoController@videosPorTutorial', $title = $video->titulo, $parameters = array("tutorial_id"=>$seccion->tutorial_id,"page"=>$cont), $attributes = [])!!}</td>
                             <td>   <p>{{$video->duracion}} Minutos</p></td>
 
                             <!---------------->
                         </tr>
+                        <?php
+                        $cont++
+                        ?>
                     @endforeach
+
                     </tbody>
                 </table>
             </div>

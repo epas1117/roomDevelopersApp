@@ -58,7 +58,7 @@ class SeccionController extends Controller
     public function show($id)
     {
 
-       
+        
     }
 
     /**
