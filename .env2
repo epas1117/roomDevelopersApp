@@ -4,11 +4,11 @@ APP_KEY=base64:r7u5B8CzD+V/NvOVN1WDBKE7tXP/SIGlKSVRGiAMCFE=
 APP_URL=http://localhost
 
 DB_CONNECTION=mysql
-DB_HOST=db4free.net
+DB_HOST=localhost
 DB_PORT=3306
 DB_DATABASE=roomdevelopers
-DB_USERNAME=roomdev_teban
-DB_PASSWORD=aserta
+DB_USERNAME=root
+DB_PASSWORD=
 
 CACHE_DRIVER=file
 SESSION_DRIVER=file

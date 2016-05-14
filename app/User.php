@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-     use SoftDeletes;
+    use SoftDeletes;
     /**
      * The attributes that are mass assignable.
      *
@@ -28,9 +28,17 @@ class User extends Authenticatable
     ];
 
     protected $dates = ['deleted_at'];
-    public function setPasswordAttribute($valor){
-        if(!empty($valor)){
+
+    public function setPasswordAttribute($valor)
+    {
+        if (!empty($valor)) {
             $this->attributes['password'] = \Hash::make($valor);
         }
     }
+
+    public function videos()
+    {
+        return $this->belongsToMany('Cinema\Video');
+    }
+
 }
