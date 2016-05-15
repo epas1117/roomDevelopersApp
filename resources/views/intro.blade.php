@@ -17,8 +17,9 @@
              <section class="videoPrincipal  col-md-6 ">
 
                  <div class="flex-video widescreen" align="center" style="margin: 0 auto;text-align:right;" >
-                     <iframe class="embed-responsive-item" width="540" height="380"
-                             src="http://www.youtube.com/embed/iBKFsUtivQY"></iframe>
+
+                     <iframe class="embed-responsive-item" width="540" height="380" src="https://www.youtube.com/embed/KJZYUxPGeYk?modestbranding=1&fs=1&v=p4qME64SkxM&fs=1&showinfo=0"
+                             frameborder="0" allowfullscreen></iframe>
                  </div>
              </section>
 
