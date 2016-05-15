@@ -78,6 +78,7 @@ class UsuarioController extends Controller
         //   'email' => $request['email'],
         // 'password' => $request['password']
         //]);
+
         User::create($request->all());
         Session::flash('message', 'Please log in to continue...');
         return redirect('/');
@@ -203,5 +204,14 @@ class UsuarioController extends Controller
         return false;
     }
 
+    public function guardarVideoUsuario(Request $request)
+    {
+        if ($request->has('check')) {
+            Auth::user()->videos()->attach($request->input('video_id'));
+        } else {
+            Auth::user()->videos()->detach($request->input('video_id'));
+        }
 
+        return Redirect::back();
+    }
 }
