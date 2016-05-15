@@ -50,6 +50,8 @@
                     <tbody>
 
                     @foreach($seccion->videos as $video)
+                        <?php $checked = "" ?>
+                        
                         <tr>
                             <?php $validacion = "" ?>
                             @if(Auth::check())
