@@ -3,7 +3,6 @@ header {
     color: #000000;
 
 }
-
 .navbar{
     color: #FFFFFF;
 }
@@ -17,7 +16,7 @@ body{
 /*Pone estilo y movimiento en la animacion */
 #anim {
     -webkit-animation-name: movimiento-diagonal; /*inicia el movimiento */
-    -webkit-animation-duration: 5s; /*tiempo que se demora en ir y regresar */
+    -webkit-animation-duration: 3s; /*tiempo que se demora en ir y regresar */
     -webkit-animation-iteration-count: infinite; /*para que siga realizando la iteracion */
     -webkit-animation-direction: alternate ; /*para que vuelva a su posicion inicial */
     color: #fff; /*color de la letraS */
@@ -29,21 +28,17 @@ body{
         margin-left: 0%;
 
     }to{
-             margin-left: 30%;
+             margin-left: 20%;
 
      }
 }
-
-
 .jumbotron {
     background-color: #3fb0ac;*
     /* margen del jumbotron principal*/
-
     padding: 20px 0;
     position: relative;
 
 }
-
 aside {
     color: #fff;
 }
@@ -56,7 +51,6 @@ aside {
 .navbar {
     margin-bottom: 0;
 }
-
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -238,19 +232,19 @@ aside {
         0% {
             -webkit-transform: translateX(8%);
         }
-        20%{
+        0%{
             -webkit-transform: translateX(-5%);
         }
-        40%{
+        20%{
             -webkit-transform: translateX(2%);
         }
-        60%{
+        30%{
             -webkit-transform: translateX(-2%);
         }
-        80%{
+        40%{
             -webkit-transform: translateX(0%);
         }
-        100% {
+        50% {
             -webkit-transform: translateX(0%);
         }
     }
