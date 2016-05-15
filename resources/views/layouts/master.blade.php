@@ -33,7 +33,7 @@
                         <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign up</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#logInModal">Log in</a></li>
                     @else
-                        <li><a href="#" data-toggle="modal" data-target="#signUpModal">{{Auth::user()->name}}</a></li>
+                        <li><a href="{{URL::to('usuario/perfil')}}" >{{Auth::user()->name}}</a></li>
                     @endif
                 </ul>
             </div>

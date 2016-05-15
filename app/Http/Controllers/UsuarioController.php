@@ -2,6 +2,7 @@
 
 namespace Cinema\Http\Controllers;
 
+use Cinema\Tutorial;
 use Illuminate\Http\Request;
 use Cinema\User;
 use Cinema\Http\Requests\UserCreaterequest;
@@ -32,7 +33,10 @@ class UsuarioController extends Controller
     //Muestra el perfil de la pagina lo controla
     public function mostrarPerfil()
     {
-        return view('usuario.perfil');
+
+        $tutorialesCompletados = $this->tutorialesCompletados();
+        return view('usuario.perfil', ['tutoriales' => $tutorialesCompletados]);
+
     }
 
     public function log(LoginRequest $request)
@@ -43,6 +47,7 @@ class UsuarioController extends Controller
         Session::flash('message-error', 'Datos son incorrectos');
         return Redirect::to('/');
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -124,5 +129,41 @@ class UsuarioController extends Controller
         $user->delete();
         Session::flash('message', 'Usuario eliminado correctamente');
         return Redirect::to('\usuario');
+    }
+
+    /**
+     Crear metodo para contar registros
+     */
+    public function tutorialesCompletados(){
+    $tutorialesCompletados=array();// variable que guarda lo que va a retornar
+        $tutoriales=Tutorial::all(); // traigo lo de tutoriales con id 1
+        foreach ($tutoriales as $tutorial){
+            $completed = true;
+            foreach ($tutorial->secciones as $seccion){
+                foreach ($seccion->videos as $video){
+
+                    if($this->contiene($video,Auth::user()->videos)==false){
+                        $completed = false;
+                    }
+                }
+            }
+            if($completed == true){
+                array_push($tutorialesCompletados, $tutorial);
+            }
+        }
+
+             return $tutorialesCompletados;
+
+    }
+
+    
+
+    public function contiene($videoEncontrar,$videos){
+        foreach ($videos as $video){
+            if($video->id == $videoEncontrar->id){
+                return true;
+            }
+        }
+        return false;
     }
 }

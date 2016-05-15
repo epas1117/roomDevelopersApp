@@ -1,7 +1,11 @@
 header {
     background: #3fb0ac;
-    color: #FFFFFF ;
+    color: #FFFFFF;
 
+}
+
+.navbar{
+    color: #FFFFFF;
 }
 body{
     font-family: Raleway;
@@ -251,9 +255,8 @@ aside {
         }
     }
     #wrap {
-       font-size: 1.5em;
-        height: 50px;
-        width: 2000px;
+        height: 35px;
+        width: 80px;
     }
 
 

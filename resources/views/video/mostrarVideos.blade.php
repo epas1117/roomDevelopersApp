@@ -2,10 +2,12 @@
 @section('content')
 
 
-    <div class="checkbox col-xs-12" >
+
+    <div class="checkbox col-xs-6" >
         <label><input type="checkbox" value="" id="wrap"></label>
     </div>
-    <div align="center">
+
+    <div class=" col-xs-6" align="center">
         {!!$videos->render()!!}
     </div>
     @foreach($videos as $video)
@@ -28,7 +30,7 @@
             <section class="embed-responsive-item col-xs-12">
 
                 <div class="flex-video widescreen" align="center">
-                    <iframe class="embed-responsive-item" width="650" height="600" src="{{$video->link}}"
+                    <iframe class="embed-responsive-item" width="650" height="500" src="{{$video->link}}"
                     ></iframe>
                 </div>
 
