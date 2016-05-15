@@ -3,24 +3,28 @@
 
 
         <!-- Se crea un cntenedor para la fato y nombre  del video tutoriales en un boton-->
-<div class="container-fluid" id="contenedorPerfil">
-    <div class="row">
-        <div class="col-sm-12" align="center">
-            <div id="moverBoton">
-                <a href="{{URL::to('tutorial/logout')}}" class="btn btn-default" id="botonSalir">LOGOUT</a>
+<div class="box-shadow--3dp ">
+    <div class="container-fluid " id="contenedorPerfil" >
+        <div class="row">
+
+            <div class="col-sm-12"align="center" >
+
+                <div id="moverBoton">
+                    <a href="{{URL::to('tutorial/logout')}}" class="btn btn-info" id="botonSalir">LOGOUT</a>
+                </div>
+
+                <img src="https://yt3.ggpht.com/-SN1RQ4kN5bM/AAAAAAAAAAI/AAAAAAAAAAA/T39gSKk4e2g/s88-c-k-no-rj-c0xffffff/photo.jpg"
+                     id="nttLogo"  class="img-circle" >
+                <h3 align="center">{{Auth::user()->name}} </h3>
             </div>
-            <img src="https://yt3.ggpht.com/-SN1RQ4kN5bM/AAAAAAAAAAI/AAAAAAAAAAA/T39gSKk4e2g/s88-c-k-no-rj-c0xffffff/photo.jpg"
-                 id="nttLogo" class="img-circle">
-            <h3 align="center">{{Auth::user()->name}} </h3>
-
-
         </div>
     </div>
-</div>
-<!-- Se crea parael progreso de video tutoriales en un boton-->
+    <!-- Se crea parael progreso de video tutoriales en un boton-->
 <div class="container-fluid" id="contenedorVer">
     <div class="row">
 
+        <div class=" col-xs-12 " align="center">
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#videosCompletados">Completed Tutorials</button>
 
         <div class="col-xs-12" align="center">
             <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#videosCompletados">
@@ -44,6 +48,12 @@
                         </div>
 
 
+                    <div class="col-xs-4" align="center">
+                        <h4  id="NegrillasPalabras">Completed </h4>
+                        <a href="{{URL::to('tutorial/'.$tutorialCompletado->id)}}" class="btn btn-info btn-lg">
+                            <span class="glyphicon glyphicon-ok"></span> Ok
+                        </a>
+                    </div>
                         <div class="col-xs-4" align="center">
                             <h4 id="NegrillasPalabras">Completed </h4>
                             <a href="#" class="btn btn-info btn-lg">
@@ -94,6 +104,7 @@
         </div>
 
     </div>
+</div>
 </div>
 
 

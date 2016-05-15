@@ -1,11 +1,11 @@
 header {
     background: #3fb0ac;
     color: #000000;
-
 }
 .navbar{
     color: #FFFFFF;
 }
+
 body{
     font-family: Raleway;
     background: #dddfd4;
@@ -26,17 +26,15 @@ body{
 @-webkit-keyframes movimiento-diagonal {
     from {
         margin-left: 0%;
-
-    }to{
+    } to{
              margin-left: 20%;
-
      }
 }
 .jumbotron {
     background-color: #3fb0ac;*
     /* margen del jumbotron principal*/
-    padding: 20px 0;
-    position: relative;
+    padding: 10px ;
+    position: inherit;
 
 }
 aside {
@@ -181,11 +179,11 @@ aside {
     }
     #contenedorPerfil{
         padding: 20px;
-        background-color:#66afe9;
+        background-color:#3fb0ac;
     }
     #contenedorVer{
         padding: 20px;
-        background-color:#2ca02c;
+        background-color:#FF9800;
     }
     #NegrillasPalabras{
       font-weight: 900;
@@ -259,13 +257,31 @@ aside {
         -moz-box-shadow: 2px 2px 5px ;
         background-color:#dddfd4;
 
+
     }
-
-
 
    #moverBoton{
        padding-left: 1050px;
+
    }
+    #botonSalir{
+        cursor: pointer;
+        border: 0;
+        border-radius: 100px;
+        color:#ffffff;
+        /* propiedades para la animacion del boton */
+        transition: all 0.1s linear;
+        -webkit-transition: all 0.20s linear;
+        -moz-transition: all 0.20s linear;
+        position: relative;
+        box-shadow: 0px 10px 0 #173e43;
+
+    }
+    #botonSalir:active {
+        /* Posicion del boton al clickearlo y la sombra al click*/
+        bottom: 0px;
+        box-shadow:0 0 0 #f37000, inset 0 0 10px ;
+    }
 }
 /* Tooltip container */
 
