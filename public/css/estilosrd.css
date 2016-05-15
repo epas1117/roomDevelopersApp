@@ -62,12 +62,6 @@ aside {
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-
-
-
-
-
-
 /* Toggle Styles */
 
 #wrapper {
@@ -96,11 +90,13 @@ aside {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     margin-top: -20px;
-    position:  absolute;
+    position: absolute;
     color: #A5B6C3;
 
+}
 
-
+td > a {
+    color: #2e3436;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -199,12 +195,12 @@ aside {
 
     #contenedorPerfil {
         padding: 20px;
-        background-color: #66afe9;
+        background-color: #33a3cd;
     }
 
     #contenedorVer {
         padding: 20px;
-        background-color: #66afe9;
+        background-color: #33a3cd;
     }
 
     #NegrillasPalabras {
@@ -290,7 +286,8 @@ aside {
         cursor: pointer;
         border: 0;
         border-radius: 100px;
-        color: #ffffff;
+        background-color: #a5B6C3;
+        color: #31475a;
         /* propiedades para la animacion del boton */
         transition: all 0.1s linear;
         -webkit-transition: all 0.20s linear;
@@ -324,7 +321,6 @@ aside {
     #modificarLogo {
 
         margin-left: -50px;
-
 
     }
 }
@@ -391,7 +387,7 @@ aside {
     opacity: .5;
 }
 
-.titulo{
+.titulo {
     text-align: left;
 }
 

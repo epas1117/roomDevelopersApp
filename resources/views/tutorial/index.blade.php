@@ -19,7 +19,7 @@
                             <!-- /input-group -->
                 </li>
                 <li class="sidebar-brand">
-                    Categories
+                    <h2 style="font-weight: bold;text-decoration: underline;">Categories</h2>
                 </li>
                 @foreach($categorias as $categoria)
                     <li>

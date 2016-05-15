@@ -64,6 +64,7 @@
                     @foreach($tutorialesEnProgreso as $tutorialEnProgreso)
                         <div class="row">
                             <div class="col-xs-4" align="center">
+                                <h4 id="NegrillasPalabras">Tutorials</h4>
                                 <h5>{{$tutorialEnProgreso->titulo}}</h5>
                             </div>
                             <div class="col-xs-4" align="center">
@@ -79,8 +80,8 @@
                             </div>
                             <div class="col-xs-4" align="center">
                                 <h4 id="NegrillasPalabras">Incomplete</h4>
-                                <a href="{{URL::to('tutorial/'.$tutorialEnProgreso->id)}}" class="btn btn-info btn-lg">
-                                    <span class="glyphicon glyphicon-ok"></span>
+                                <a href="{{URL::to('tutorial/'.$tutorialEnProgreso->id)}}" class="btn btn-info btn-sm">
+                                    GO!
                                 </a>
                             </div>
                         </div>

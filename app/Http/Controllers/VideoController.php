@@ -11,7 +11,7 @@ class VideoController extends Controller
 {
     public function index()
     {
-       
+
     }
 
     /**
@@ -27,7 +27,7 @@ class VideoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -38,7 +38,7 @@ class VideoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -49,7 +49,7 @@ class VideoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -60,8 +60,8 @@ class VideoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -72,21 +72,23 @@ class VideoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
     }
-    public function videosPorTutorial($tutorial_id){
 
-        $videos= DB::table('secciones')
+    public function videosPorTutorial($tutorial_id)
+    {
+
+        $videos = DB::table('secciones')
             ->join('videos', 'secciones.id', '=', 'videos.seccion_id')
             ->select('videos.*')
-            ->where ('secciones.tutorial_id','=',$tutorial_id)
+            ->where('secciones.tutorial_id', '=', $tutorial_id)
             ->paginate(1);
-        return view('video.mostrarVideos',compact('videos'));
+        return view('video.mostrarVideos', compact('videos', 'tutorial_id'));
 
     }
 }
