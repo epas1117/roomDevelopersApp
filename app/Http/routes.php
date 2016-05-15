@@ -4,12 +4,11 @@ Route::get('/', 'FrontController@index');
 Route::get('admin', 'FrontController@admin');
 
 //Rutas Usuarios
-
 //redireccionar a la pagina perfil
 Route::get('usuario/perfil', ['as' => 'usuario.perfil', 'uses' => 'UsuarioController@mostrarPerfil']);
 Route::post('tutorial/log', ['as' => 'usuario.log', 'uses' => 'UsuarioController@log']);
 Route::resource('usuario', 'UsuarioController');
-
+Route::get('tutorial/logout', ['as' => 'usuario.logout', 'uses' => 'UsuarioController@logOut']);
 
 //Rutas Categorias
 Route::resource('categoria', 'CategoriaController');
