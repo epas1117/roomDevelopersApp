@@ -51,34 +51,35 @@
 
                     @foreach($seccion->videos as $video)
                         <?php $checked = "" ?>
-                        
+
                         <tr>
                             <?php $validacion = "" ?>
                             @if(Auth::check())
                                 @foreach(Auth::user()->videos as $vid)
-                                        <?php $validacion = "" ?>
-                                        <?php $checked = "" ?>
-                                        @if($vid->id===$video->id)
+                                    <?php $validacion = "" ?>
+                                    <?php $checked = "" ?>
+                                    @if($vid->id===$video->id)
                                         <?php $validacion = "success" ?>
                                         <?php $checked = "checked" ?>
 
                                         @break
                                     @else
-                                            <?php $validacion = "" ?>
-                                                <?php $checked = "disabled" ?>
+                                        <?php $validacion = "" ?>
+                                        <?php $checked = "disabled" ?>
 
                                     @endif
                                 @endforeach
                             @endif
 
-                                <td class="{{$validacion}}" >
-                                    <div class="checkbox disabled">
-                                        <label style="font-size: 1.5em">
-                                            <input type="checkbox" value="" {{$checked}}>
-                                            <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                            <td class="{{$validacion}}">
+                                <div class="checkbox disabled">
+                                    <label style="font-size: 1.5em">
+                                        <input type="checkbox" value="" {{$checked}}>
+                                        <span class="cr"><i class="cr-icon fa fa-check"></i></span>
 
-                                        </label>
-                                    </div> </td>
+                                    </label>
+                                </div>
+                            </td>
                             <td class="{{$validacion}}"> {!!link_to_action('VideoController@videosPorTutorial', $title = $video->titulo, $parameters = array("tutorial_id"=>$seccion->tutorial_id,"page"=>$cont), $attributes = [])!!}</td>
                             <td class="{{$validacion}}"><p>{{$video->duracion}} Minutos</p></td>
                         </tr>

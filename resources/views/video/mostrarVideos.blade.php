@@ -15,22 +15,24 @@
                             {{$video->descripcion}}
                         </h4>
                     </li>
-                    <li>
-                        {!!Form::open(['route'=> ['videousuario.guardar'],'method'=>'POST'])!!}
-                        <div class="checkbox">
-                            <label style="font-size: 1em">
-                                <input name="video_id" type="hidden" value="{{$video->id}}">
-                                @if(Auth::user()->videos->contains($video->id))
-                                    <input type="checkbox" name="check" value="1" onClick="submit();" checked>
-                                @else
-                                    <input type="checkbox" name="check" value="0" onClick="submit();">
-                                @endif
-                                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                                Completed
-                            </label>
-                        </div>
-                        {!!Form::close()!!}
-                    </li>
+                    @if(Auth::check())
+                        <li>
+                            {!!Form::open(['route'=> ['videousuario.guardar'],'method'=>'POST'])!!}
+                            <div class="checkbox">
+                                <label style="font-size: 1em">
+                                    <input name="video_id" type="hidden" value="{{$video->id}}">
+                                    @if(Auth::user()->videos->contains($video->id))
+                                        <input type="checkbox" name="check" value="1" onClick="submit();" checked>
+                                    @else
+                                        <input type="checkbox" name="check" value="0" onClick="submit();">
+                                    @endif
+                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                    Completed
+                                </label>
+                            </div>
+                            {!!Form::close()!!}
+                        </li>
+                    @endif
                 @endforeach
 
             </ul>
