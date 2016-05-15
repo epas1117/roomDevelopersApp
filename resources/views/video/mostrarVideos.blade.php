@@ -1,6 +1,13 @@
 @extends('layouts.master')
 @section('content')
 
+
+    <div class="checkbox col-xs-12" >
+        <label><input type="checkbox" value="" id="wrap"></label>
+    </div>
+    <div align="center">
+        {!!$videos->render()!!}
+    </div>
     @foreach($videos as $video)
 
 
@@ -18,10 +25,10 @@
 
         <div class="row">
 
-            <section class="col-xs-12">
+            <section class="embed-responsive-item col-xs-12">
 
                 <div class="flex-video widescreen" align="center">
-                    <iframe class="embed-responsive-item" width="1000" height="600" src="{{$video->link}}"
+                    <iframe class="embed-responsive-item" width="650" height="600" src="{{$video->link}}"
                     ></iframe>
                 </div>
 

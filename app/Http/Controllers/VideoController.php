@@ -13,7 +13,7 @@ class VideoController extends Controller
     {
        $videos=Video::paginate(1);
         
-       return view('video.index',compact('videos'));
+       return view('video.mostrarVideos',compact('videos'));
     }
 
     /**
