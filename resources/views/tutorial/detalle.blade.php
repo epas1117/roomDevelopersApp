@@ -51,15 +51,17 @@
 
                     @foreach($seccion->videos as $video)
                         <tr>
-                            @foreach(Auth::user()->videos as $vid)
-                                @if($vid->id===$video->id)
-                                    <?php $validacion = "success" ?>
-                                    @break
-                                @else
-                                    {{$validacion=""}}
+                            <?php $validacion = "" ?>
+                            @if(Auth::check())
+                                @foreach(Auth::user()->videos as $vid)
+                                    @if($vid->id===$video->id)
+                                        <?php $validacion = "success" ?>
+                                        @break
+                                    @else
+                                        {{$validacion=""}}
 
-                                @endif
-                            @endforeach
+                                    @endif
+                                @endforeach
                             @endif
                             <td class="{{$validacion}}"> {!!link_to_action('VideoController@videosPorTutorial', $title = $video->titulo, $parameters = array("tutorial_id"=>$seccion->tutorial_id,"page"=>$cont), $attributes = [])!!}</td>
                             <td class="{{$validacion}}"><p>{{$video->duracion}} Minutos</p></td>
