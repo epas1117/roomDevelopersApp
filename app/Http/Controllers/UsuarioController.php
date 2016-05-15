@@ -33,10 +33,9 @@ class UsuarioController extends Controller
     //Muestra el perfil de la pagina lo controla
     public function mostrarPerfil()
     {
-
         $tutorialesCompletados = $this->tutorialesCompletados();
-        return view('usuario.perfil', ['tutoriales' => $tutorialesCompletados]);
-
+        $tutorialesEnProgreso = $this->tutorialesEnProgreso();
+        return view('usuario.perfil', compact('tutorialesCompletados', 'tutorialesEnProgreso'));
     }
 
     public function log(LoginRequest $request)
@@ -48,6 +47,7 @@ class UsuarioController extends Controller
         return Redirect::to('/');
 
     }
+
     public function logOut()
     {
         Auth::logout();
@@ -139,38 +139,70 @@ class UsuarioController extends Controller
     }
 
     /**
-     Crear metodo para contar registros
+     * Crear metodo para contar registros
      */
-    public function tutorialesCompletados(){
-    $tutorialesCompletados=array();// variable que guarda lo que va a retornar
-        $tutoriales=Tutorial::all(); // traigo lo de tutoriales con id 1
-        foreach ($tutoriales as $tutorial){
-            $completed = true;
-            foreach ($tutorial->secciones as $seccion){
-                foreach ($seccion->videos as $video){
-
-                    if($this->contiene($video,Auth::user()->videos)==false){
-                        $completed = false;
-                    }
-                }
-            }
-            if($completed == true){
+    public function tutorialesCompletados()
+    {
+        $tutorialesCompletados = array();// variable que guarda lo que va a retornar
+        $tutoriales = Tutorial::all(); // traigo lo de tutoriales con id 1
+        foreach ($tutoriales as $tutorial) {
+            if ($this->completo($tutorial->id) == true) {
                 array_push($tutorialesCompletados, $tutorial);
             }
         }
 
-             return $tutorialesCompletados;
+        return $tutorialesCompletados;
 
     }
 
-    
 
-    public function contiene($videoEncontrar,$videos){
-        foreach ($videos as $video){
-            if($video->id == $videoEncontrar->id){
+    public function tutorialesEnProgreso()
+    {
+        $tutorialesProgreso = array();// variable que guarda lo que va a retornar
+        $tutoriales = Tutorial::all(); // traigo lo de tutoriales con id 1
+        foreach ($tutoriales as $tutorial) {
+            if ($this->completo($tutorial->id) == false) {
+                $started = false;
+                foreach ($tutorial->secciones as $seccion) {
+                    foreach ($seccion->videos as $video) {
+                        if ($this->contiene($video, Auth::user()->videos) == true) {
+                            $started = true;
+                            break;
+                        }
+                    }
+                }
+                if ($started == true) {
+                    array_push($tutorialesProgreso, $tutorial);
+                }
+            }
+        }
+        return $tutorialesProgreso;
+    }
+
+    public function completo($tutorial_id)
+    {
+        $tutorial = Tutorial::find($tutorial_id);
+        $completed = true;
+        foreach ($tutorial->secciones as $seccion) {
+            foreach ($seccion->videos as $video) {
+                if ($this->contiene($video, Auth::user()->videos) == false) {
+                    $completed = false;
+                }
+            }
+        }
+        return $completed;
+    }
+
+
+    public function contiene($videoEncontrar, $videos)
+    {
+        foreach ($videos as $video) {
+            if ($video->id == $videoEncontrar->id) {
                 return true;
             }
         }
         return false;
     }
+
+
 }
