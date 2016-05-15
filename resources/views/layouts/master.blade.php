@@ -24,8 +24,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{{URL::to('/tutorial')}}" class="navbar-brand">roomDevelopers
-                </a>
+                <a href="{{URL::to('/tutorial')}}" class="navbar-brand">
+                    <image src="images/rd.png" class="img-rounded"></image>
+                    </a>
+                <a href="{{URL::to('/tutorial')}}" class="navbar-brand"></a>
+
             </div>
             <!--Inicia menu-->
             <div class="collapse navbar-collapse" id="navegacion-rd">

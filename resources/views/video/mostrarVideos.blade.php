@@ -3,14 +3,31 @@
 
 
 
-    <div class="checkbox col-xs-6" >
+ <!--   <div class="checkbox col-xs-6" >
         <label><input type="checkbox" value="" id="wrap"></label>
     </div>
-
-    <div class=" col-xs-6" align="center">
+-->
+    <div class=" col-xs-12" align="center">
         {!!$videos->render()!!}
     </div>
+
     @foreach($videos as $video)
+
+
+
+        <div class="row">
+
+            <section class="embed-responsive-item col-xs-12">
+
+                <div class="flex-video widescreen" align="center">
+                    <iframe class="embed-responsive-item" width="650" height="500" src="{{$video->link}}"
+                    ></iframe>
+                </div>
+
+            </section>
+
+        </div>
+
 
 
         <div class="row ">
@@ -24,20 +41,6 @@
                 </div>
             </section>
         </div>
-
-        <div class="row">
-
-            <section class="embed-responsive-item col-xs-12">
-
-                <div class="flex-video widescreen" align="center">
-                    <iframe class="embed-responsive-item" width="650" height="500" src="{{$video->link}}"
-                    ></iframe>
-                </div>
-
-            </section>
-            <!--Container ayuda a centrar todas las cosas, Carga Video columna de 6 -->
-        </div>
-
         <div class="row ">
             <section class="col-xs-12">
 
@@ -49,6 +52,8 @@
                 </div>
             </section>
         </div>
+
+
 
     @endforeach
     <div align="center">

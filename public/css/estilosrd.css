@@ -1,6 +1,9 @@
 header {
     background: #3fb0ac;
     color: #000000;
+    height: 60px;
+    font-size: 30px;
+
 
 }
 .navbar{
@@ -9,8 +12,6 @@ header {
 body{
     font-family: Raleway;
     background: #dddfd4;
-
-    color: #173e43 !important;
 }
 
 /*Pone estilo y movimiento en la animacion */
