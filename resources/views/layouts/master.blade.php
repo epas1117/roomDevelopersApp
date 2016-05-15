@@ -10,7 +10,6 @@
     {!!Html::style('https://fonts.googleapis.com/css?family=Alegreya+Sans')!!}
     {!!Html::style('https://fonts.googleapis.com/css?family=Raleway')!!}
 
-
 </head>
 <body>
 <header>
