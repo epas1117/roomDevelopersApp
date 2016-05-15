@@ -14,9 +14,10 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-static-top" role="navigation ">
+    <nav class="navbar   navbar-static-top" >
         <div class="container">
             <div class="navbar-header">
+
                 <button type="button" class="navbar-toggle  collapsed" data-toggle="collapse"
                         data-target="#navegacion-rd">
                     <span class="sr-only">Desplegar / Ocultar Menu</span>
@@ -25,8 +26,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="{{URL::to('/tutorial')}}" class="navbar-brand">
-                    <image src="images/rd.png" class="img-rounded"></image>
-                    </a>
+                    <img src="{{asset("images/rd.png")}}" id="modificarLogo"/>
+                </a>
+
                 <a href="{{URL::to('/tutorial')}}" class="navbar-brand"></a>
 
             </div>
@@ -36,6 +38,7 @@
                     @if(!Auth::check())
                         <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign up</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#logInModal">Log in</a></li>
+
                     @else
                         <li><a href="{{URL::to('usuario/perfil')}}" >{{Auth::user()->name}}</a></li>
                     @endif

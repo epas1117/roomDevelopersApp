@@ -4,7 +4,6 @@ header {
     height: 60px;
     font-size: 30px;
 
-
 }
 .navbar{
     color: #FFFFFF;
@@ -86,6 +85,8 @@ aside {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    margin-top: -20px;
+
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -187,7 +188,7 @@ aside {
     }
     #contenedorVer{
         padding: 20px;
-        background-color:#2ca02c;
+        background-color:#66afe9;
     }
     #NegrillasPalabras{
       font-weight: 900;
@@ -286,6 +287,24 @@ aside {
         bottom: 0px;
         box-shadow:0 0 0 #f37000, inset 0 0 10px ;
     }
+
+    #modificarProgreso{
+        background-color: gray;
+        border: 3px solid #3B5998
+    }
+#modificarBotonOK{
+    background-color: gray;
+    border: 3px solid #3B5998
+
+}
+#modificarSearch{
+    padding-top: 30px;
+}
+#modificarLogo{
+
+    margin-left: -100px;
+
+}
 }
 /* Tooltip container */
 

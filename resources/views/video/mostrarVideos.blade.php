@@ -1,63 +1,61 @@
 @extends('layouts.master')
 @section('content')
 
-
-
- <!--   <div class="checkbox col-xs-6" >
-        <label><input type="checkbox" value="" id="wrap"></label>
-    </div>
--->
-    <div class=" col-xs-12" align="center">
-        {!!$videos->render()!!}
-    </div>
-
-    @foreach($videos as $video)
-
-
-
-        <div class="row">
-
-            <section class="embed-responsive-item col-xs-12">
-
-                <div class="flex-video widescreen" align="center">
-                    <iframe class="embed-responsive-item" width="650" height="500" src="{{$video->link}}"
-                    ></iframe>
-                </div>
-
-            </section>
-
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-search">
+                    @foreach($videos as $video)
+                        <h1>
+                            {{$video->titulo}}
+                        </h1>
+                        <h4>
+                            {{$video->descripcion}}
+                        </h4>
+                    @endforeach
+                </li>
+            </ul>
         </div>
 
 
-
-        <div class="row ">
-            <section class="col-xs-12">
-
-                <div class="flex-video widescreen">
-                    <h1>
-                        {{$video->titulo}}
-
-                    </h1>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
                 </div>
-            </section>
-        </div>
-        <div class="row ">
-            <section class="col-xs-12">
-
-                <div class="flex-video widescreen" align="center">
-                    <h2>
-                        {{$video->descripcion}}
-                    </h2>
-
+                <div class="row">
+                    <div class=" col-xs-12" align="center">
+                        {!!$videos->render()!!}
+                    </div>
                 </div>
-            </section>
+                @foreach($videos as $video)
+
+
+
+                    <div class="row">
+
+                        <section class="embed-responsive-item col-xs-12">
+
+                            <div class="flex-video widescreen" align="center">
+                                <iframe class="embed-responsive-item" width="650" height="500" src="{{$video->link}}"
+                                ></iframe>
+                            </div>
+
+                        </section>
+
+                    </div>
+
+
+                @endforeach
+                <div class="row">
+                    <div class="col-xs-12" align="center ">
+                        {!!$videos->render()!!}
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-
-    @endforeach
-    <div align="center">
-        {!!$videos->render()!!}
     </div>
 
 @endsection

@@ -7,7 +7,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-search">
                     {!!Form::open(['route'=> ['tutorial.filterTitulo'],'method'=>'GET'])!!}
-                    <div class="input-group">
+                    <div class="input-group" id="modificarSearch">
                         <input name="buscar" type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
