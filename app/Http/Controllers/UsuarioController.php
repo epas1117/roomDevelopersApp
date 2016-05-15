@@ -45,7 +45,6 @@ class UsuarioController extends Controller
         }
         Session::flash('message-error', 'Datos son incorrectos');
         return Redirect::to('/');
-
     }
 
     public function logOut()
