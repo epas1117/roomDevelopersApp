@@ -5,7 +5,7 @@
     <title>roomDevelopers</title>
 
     {!!Html::style('css/bootstrap.css')!!}
-    {!!Html::style('css/font-awesome.min.css')!!}
+    {!!Html::style('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')!!}
     {!!Html::style('css/estilosrd.css')!!}
     {!!Html::style('https://fonts.googleapis.com/css?family=Alegreya+Sans')!!}
     {!!Html::style('https://fonts.googleapis.com/css?family=Raleway')!!}
@@ -14,7 +14,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar   navbar-static-top" >
+    <nav class="navbar   navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -40,7 +40,7 @@
                         <li><a href="#" data-toggle="modal" data-target="#logInModal">Log in</a></li>
 
                     @else
-                        <li><a href="{{URL::to('usuario/perfil')}}" >{{Auth::user()->name}}</a></li>
+                        <li><a href="{{URL::to('usuario/perfil')}}">{{Auth::user()->name}}</a></li>
                     @endif
                 </ul>
             </div>
