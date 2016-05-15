@@ -1,4 +1,4 @@
-.header {
+header {
     background: #3fb0ac;
     color: #FFFFFF ;
 
@@ -250,16 +250,12 @@ aside {
             -webkit-transform: translateX(0%);
         }
     }
-
-
     #wrap {
-
        font-size: 1.5em;
-
         height: 50px;
-
         width: 2000px;
     }
+
 
     .box-shadow--3dp {
         -webkit-box-shadow: 2px 2px 5px ;
