@@ -8,6 +8,8 @@ class Tutorial extends Model
 {
     protected $table = 'tutoriales';
     protected $fillable = ['titulo', 'descripcion', 'autor', 'imagen', 'categoria_id'];
+
+
     public function secciones()
     {
         return $this->hasMany('Cinema\Seccion');

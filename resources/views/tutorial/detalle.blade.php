@@ -1,10 +1,34 @@
 @extends('layouts.master')
 @section('content')
         <!------------------>
+        <!------------imagencentral------>
+
+<div class="row " >
+    <div class="col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-sm-4 col-md-4 col-lg-4 ">
+
+                            <div class="thumbnail">
+                    <a href="{{URL::to('tutorial/'.$tutorial->id)}}"><img
+                                src="{{asset("images/".$tutorial->imagen)}}"
+                                alt="" class="img-thumbnail img-responsive"
+                                style="width: 200px;height: 150px"></a>
+                    <div class="caption">
+
+                        <h3>{{$tutorial->descripcion}}</h3>
+                        <p>{{$tutorial->autor}}</p>
+                    </div>
+                </div>
+
+    </div>
+</div>
+        <!------------imagencentral------>
+
+
+
 <div id="accordion" role="tablist" aria-multiselectable="true" >
     <?php
     $cont=1
     ?>
+
     @foreach($tutorial->secciones as $seccion)
         <div class="panel panel-default ">
 
@@ -20,14 +44,24 @@
 
             <div id="collapse{{$seccion->id}}" class="panel-collapse collapse table-responsive" role="tabpanel" aria-labelledby="heading{{$seccion->id}}">
                 <!---------------->
-                <table class="table ">
+                <table class="table table-hover">
                     <tbody>
 
                     @foreach($seccion->videos as $video)
                         <tr>
+                            @foreach(Auth::user()->videos as $vid)
+                                @if($vid->id===$video->id)
+                                    <?php $validacion="success" ?>
+                                    @break
+                                @else
+                                    {{$validacion=""}}
 
-                            <td> {!!link_to_action('VideoController@videosPorTutorial', $title = $video->titulo, $parameters = array("tutorial_id"=>$seccion->tutorial_id,"page"=>$cont), $attributes = [])!!}</td>
-                            <td>   <p>{{$video->duracion}} Minutos</p></td>
+                                @endif
+
+                            @endforeach
+
+                            <td class="{{$validacion}}"> {!!link_to_action('VideoController@videosPorTutorial', $title = $video->titulo, $parameters = array("tutorial_id"=>$seccion->tutorial_id,"page"=>$cont), $attributes = [])!!}</td>
+                            <td class="{{$validacion}}">   <p>{{$video->duracion}} Minutos</p></td>
 
                             <!---------------->
                         </tr>
