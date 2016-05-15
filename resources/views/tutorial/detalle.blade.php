@@ -60,9 +60,9 @@
 
                             @endforeach
 
-                            <td class="{{$validacion}}"> {!!link_to_action('VideoController@videosPorTutorial', $title = $video->titulo, $parameters = array("tutorial_id"=>$seccion->tutorial_id,"page"=>$cont), $attributes = [])!!}</td>
+                            <td class="{{$validacion}}" data-toggle="tooltip" title="{{$video->descripcion}}">  {!!link_to_action('VideoController@videosPorTutorial', $title = $video->titulo, $parameters = array("tutorial_id"=>$seccion->tutorial_id,"page"=>$cont), $attributes = [])!!}  </td>
                             <td class="{{$validacion}}">   <p>{{$video->duracion}} Minutos</p></td>
-                                
+
 
                             <!---------------->
                         </tr>
