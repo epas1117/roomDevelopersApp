@@ -20,7 +20,7 @@
     <div class="container-fluid" id="contenedorVer">
         <div class="row">
             <div class="col-xs-12" align="center">
-                <button type="button" class="btn btn-default" id="NegrillasPalabras"  data-toggle="collapse"
+                <button type="button" class="btn btn-default" id="NegrillasPalabras" data-toggle="collapse"
                         data-target="#videosCompletados">
                     Completed Tutorials
                 </button>
@@ -34,8 +34,9 @@
 
                             <div class="col-xs-4" align="center">
                                 <h4 id="NegrillasPalabras">Progress</h4>
-                                <div class="progress" >
-                                    <div class="progress-bar" id="modificarProgreso" role="progressbar" aria-valuenow="100"
+                                <div class="progress">
+                                    <div class="progress-bar" id="modificarProgreso" role="progressbar"
+                                         aria-valuenow="100"
                                          aria-valuemin="0" aria-valuemax="100" style="width:100%">
                                         <span class="sr-only">100% Complete</span></div>
                                 </div>
@@ -55,7 +56,8 @@
         </div>
         <div class="row">
             <div class="col-xs-12" align="center">
-                <button type="button" class="btn btn-default" id="NegrillasPalabras" data-toggle="collapse" data-target="#videosProgreso">
+                <button type="button" class="btn btn-default" id="NegrillasPalabras" data-toggle="collapse"
+                        data-target="#videosProgreso">
                     In progress
                 </button>
                 <div id="videosProgreso" class="collapse">
@@ -67,7 +69,8 @@
                             <div class="col-xs-4" align="center">
                                 <h4 id="NegrillasPalabras">Progress</h4>
                                 <div class="progress">
-                                    <div class="progress-bar" id="modificarProgreso" role="progressbar" aria-valuenow="100"
+                                    <div class="progress-bar" id="modificarProgreso" role="progressbar"
+                                         aria-valuenow="100"
                                          aria-valuemin="0" aria-valuemax="100"
                                          style="width:{{ Auth::user()->porcentaje($tutorialEnProgreso->id) }}%">
 
@@ -76,7 +79,7 @@
                             </div>
                             <div class="col-xs-4" align="center">
                                 <h4 id="NegrillasPalabras">Incomplete</h4>
-                                <a href="#" class="btn btn-info btn-lg">
+                                <a href="{{URL::to('tutorial/'.$tutorialEnProgreso->id)}}" class="btn btn-info btn-lg">
                                     <span class="glyphicon glyphicon-ok"></span>
                                 </a>
                             </div>
