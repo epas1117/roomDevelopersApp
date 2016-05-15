@@ -1,12 +1,12 @@
 @extends('layouts.master')
 @section('content')
     <div id="wrapper">
-        <div id="sidebar-wrapper" align="center">
-            <ul class="sidebar-nav">
+        <div id="sidebar-wrapper" >
+            <ul class="sidebar-nav" >
 
                 @foreach($videos as $video)
                     <li>
-                        <h1>
+                        <h1 class="titulo">
                             {{$video->titulo}}
                         </h1>
                     </li>
