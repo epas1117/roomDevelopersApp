@@ -62,8 +62,8 @@
 
                                         @break
                                     @else
-
                                             <?php $validacion = "" ?>
+                                                <?php $checked = "disabled" ?>
 
                                     @endif
                                 @endforeach
