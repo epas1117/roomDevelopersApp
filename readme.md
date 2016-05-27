@@ -1,4 +1,3 @@
 # roomDevelopers Repositorio Principal
 Nuevas técnicas de programación looooooooooooooooooooooooooo
 
-Miembros:Esteban Aristizabal
