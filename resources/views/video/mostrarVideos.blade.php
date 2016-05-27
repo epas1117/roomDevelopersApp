@@ -20,6 +20,7 @@
                             <h1>Completed</h1>
                         </li>
                         <li>
+
                             {!!Form::open(['route'=> ['videousuario.guardar'],'method'=>'POST'])!!}
                             <div class="checkbox" style="text-indent: 0" align="center">
                                 <label style="font-size: 2.5em">
@@ -40,6 +41,8 @@
 
             </ul>
         </div>
+
+        //Termina sidebar y Comienzan los videos
         <div id="page-content-wrapper">
             <div class="container-fluid">
 
@@ -50,12 +53,10 @@
                             GO BACK!!!
                         </a>
                     </div>
-
-
                 </div>
                 <div class="row">
                     <div class=" col-xs-12" align="center">
-                        {!!$videos->render()!!}
+                        {!!$videos->render()!!}//Sirve para activar el componente de paginacion de bootstrap
                     </div>
                 </div>
                 @foreach($videos as $video)
