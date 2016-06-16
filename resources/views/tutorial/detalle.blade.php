@@ -75,6 +75,7 @@
                                 <div class="checkbox disabled">
                                     <label style="font-size: 1.5em">
                                         <input type="checkbox" value="" {{$checked}} disabled>
+
                                         <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                                     </label>
                                 </div>
