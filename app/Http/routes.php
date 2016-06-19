@@ -5,6 +5,8 @@ Route::get('admin', 'FrontController@admin');
 
 //Rutas Usuarios
 Route::post('videousuario/guardar', ['as' => 'videousuario.guardar', 'uses' => 'UsuarioController@guardarVideoUsuario']);
+Route::put('videousuario/modificar/{video_id}', ['as' => 'videousuario.modificar', 'uses' => 'UsuarioController@modificarVideoUsuario']);
+Route::put('videousuario/fin/{video_id}', ['as' => 'videousuario.fin', 'uses' => 'UsuarioController@finVideoUsuario']);
 Route::get('usuario/perfil', ['as' => 'usuario.perfil', 'uses' => 'UsuarioController@mostrarPerfil']);
 Route::post('tutorial/log', ['as' => 'usuario.log', 'uses' => 'UsuarioController@log']);
 Route::get('tutorial/logout', ['as' => 'usuario.logout', 'uses' => 'UsuarioController@logOut']);
@@ -26,3 +28,4 @@ Route::resource('seccion', 'SeccionController');
 
 Route::get('video/tutorialVideo/{tutorial_id}', ['as' => 'video.tutorialVideo', 'uses' => 'VideoController@videosPorTutorial']);
 Route::resource('video', 'VideoController');
+

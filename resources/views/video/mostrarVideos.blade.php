@@ -74,8 +74,7 @@
         </div>
     </div>
     <script>
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
+
         var player;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
@@ -84,26 +83,75 @@
                 }
             });
         }
-        // 5. The API calls this function when the player's state changes.
-        //    The function indicates that when playing a video (state=1),
-        //    the player should play for six seconds and then stop.
         function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.PAUSED) {
-                console.log('videoConcluido');
+
+            if (event.data == YT.PlayerState.PLAYING){
+                console.log('tiempo');
+
+                    var videoId = $('#videoId').val();
+                    var route = "http://localhost:8000/videousuario/guardar";
+                    var token = $('#token').val();
+                    $.ajax({
+                        url: route
+                        , headers: {
+                            'X-CSRF_TOKEN': token
+                        }
+                        , type: 'POST'
+                        , dataType: 'json'
+                        , data: {
+                            videoId: videoId
+                        }
+                    });
+
+
             }
-            if (event.data == YT.PlayerState.ENDED) {
-                var videoId = $('#videoId').val();
-                var route = "http://localhost:8000/videousuario/guardar";
-                var token = $('#token').val();
+
+            if (event.data == YT.PlayerState.PAUSED) {
+                console.log('pausa');
+                var videoId = $("#videoId").val();
+                var tiempo= player.getCurrentTime();
+                var route = "http://localhost:8000/videousuario/modificar/" + videoId + "";
+                var token = $("#token").val();
                 $.ajax({
                     url: route
                     , headers: {
-                        'X-CSRF_TOKEN': token
+                        'X-CSRF-token': token
                     }
-                    , type: 'POST'
+                    , type: 'PUT'
                     , dataType: 'json'
                     , data: {
-                        videoId: videoId
+                        videoId: videoId,
+                        tiempo: tiempo
+                    }
+                    , success: function () {
+                        Carga();
+                        $("#myModal").modal("toggle");
+                        $("#msj-success").fadeIn();
+                    }
+                });
+
+            }
+            if (event.data == YT.PlayerState.ENDED) {
+                console.log('fin');
+                var videoId = $("#videoId").val();
+                var completado=true;
+                var route = "http://localhost:8000/videousuario/fin/" + videoId + "";
+                var token = $("#token").val();
+                $.ajax({
+                    url: route
+                    , headers: {
+                        'X-CSRF-token': token
+                    }
+                    , type: 'PUT'
+                    , dataType: 'json'
+                    , data: {
+                        videoId: videoId,
+                        completado: completado
+                    }
+                    , success: function () {
+                        Carga();
+                        $("#myModal").modal("toggle");
+                        $("#msj-success").fadeIn();
                     }
                 });
             }

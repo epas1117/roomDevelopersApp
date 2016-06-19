@@ -197,8 +197,28 @@ class UsuarioController extends Controller
             Auth::user()->videos()->detach($request->input('video_id'));
         }*/
         if ($request->ajax()) {
-            Auth::user()->videos()->attach($request->input('videoId'));
+            Auth::user()->videos()->attach($request->input('videoId'),['tiempo'=>0,'completado'=>false]);
         }
         return Redirect::back();
     }
+
+    public function modificarVideoUsuario(Request $request, $videoId)
+    {
+        if ($request->ajax()) {
+                Auth::user()->videos()->updateExistingPivot($videoId,['tiempo'=>$request->input('tiempo')]);
+        }
+
+        return Redirect::back();
+    }
+    public function finVideoUsuario(Request $request, $videoId)
+    {
+        if ($request->ajax()) {
+                Auth::user()->videos()->updateExistingPivot($videoId,['completado'=>true, 'tiempo'=>0]);
+        }
+
+        return Redirect::back();
+    }
+
+
+
 }
