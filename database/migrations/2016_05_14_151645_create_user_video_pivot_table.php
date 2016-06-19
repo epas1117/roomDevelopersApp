@@ -18,6 +18,8 @@ class CreateUserVideoPivotTable extends Migration
             $table->integer('video_id')->unsigned()->index();
             $table->foreign('video_id')->references('id')->on('videos')->onDelete('cascade');
             $table->primary(['user_id', 'video_id']);
+            $table->integer('tiempo')->nullable()->default(0);
+            $table->boolean('completado')->nullable()->default(false);
         });
     }
 

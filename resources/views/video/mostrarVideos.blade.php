@@ -20,7 +20,6 @@
                             <h1>Completed</h1>
                         </li>
                         <li>
-
                             {!!Form::open(['route'=> ['videousuario.guardar'],'method'=>'POST'])!!}
                             <div class="checkbox" style="text-indent: 0" align="center">
                                 <label style="font-size: 2.5em">
@@ -41,8 +40,6 @@
 
             </ul>
         </div>
-
-        //Termina sidebar y Comienzan los videos
         <div id="page-content-wrapper">
             <div class="container-fluid">
 
@@ -56,15 +53,19 @@
                 </div>
                 <div class="row">
                     <div class=" col-xs-12" align="center">
-                        {!!$videos->render()!!}//Sirve para activar el componente de paginacion de bootstrap
+                        {!!$videos->render()!!}
                     </div>
                 </div>
                 @foreach($videos as $video)
                     <div class="row">
                         <section class="embed-responsive-item col-xs-12">
                             <div class="flex-video widescreen" align="center">
-                                <iframe class="embed-responsive-item" width="650" height="500" src="{{$video->link}}"
-                                ></iframe>
+                                <input type="hidden" id="videoId" value="{{$video->id}}">
+                                <input type="hidden" name="_token" value="{{ csrf_token()}}"
+                                       id="token">
+                                <iframe id="player" allowfullscreen="allowfullscreen"
+                                        src="{{'http://www.youtube.com/embed/'.$video->link.'?fs=1&autoplay=1&enablejsapi=1&hl=es&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0'}}"
+                                        frameborder="0"></iframe>
                             </div>
                         </section>
                     </div>
@@ -72,4 +73,40 @@
             </div>
         </div>
     </div>
+    <script>
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PAUSED) {
+                console.log('videoConcluido');
+            }
+            if (event.data == YT.PlayerState.ENDED) {
+                var videoId = $('#videoId').val();
+                var route = "http://localhost:8000/videousuario/guardar";
+                var token = $('#token').val();
+                $.ajax({
+                    url: route
+                    , headers: {
+                        'X-CSRF_TOKEN': token
+                    }
+                    , type: 'POST'
+                    , dataType: 'json'
+                    , data: {
+                        videoId: videoId
+                    }
+                });
+            }
+        }
+    </script>
 @endsection
