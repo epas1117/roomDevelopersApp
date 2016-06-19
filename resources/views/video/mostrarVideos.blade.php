@@ -63,9 +63,12 @@
                                 <input type="hidden" id="videoId" value="{{$video->id}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token()}}"
                                        id="token">
-                                <iframe id="player" allowfullscreen="allowfullscreen"
-                                        src="{{'http://www.youtube.com/embed/'.$video->link.'?fs=1&autoplay=1&enablejsapi=1&hl=es&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0'}}"
-                                        frameborder="0"></iframe>
+                                <div class="video">
+                                    <iframe id="player" allowfullscreen="allowfullscreen"
+                                            src="{{'http://www.youtube.com/embed/'.$video->link.'?fs=1&autoplay=1&enablejsapi=1&hl=es&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0'}}"
+                                            frameborder="0"></iframe>
+                                </div>
+
                             </div>
                         </section>
                     </div>
