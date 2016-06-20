@@ -35,9 +35,9 @@
                         <tbody>
                         @foreach($seccion->videos as $video)
                             <tr>
+                                <?php $validacion = "" ?>
+                                <?php $checked = "" ?>
                                 @if(Auth::check())
-                                    <?php $validacion = "" ?>
-                                    <?php $checked = "" ?>
                                     @if(Auth::user()->videos->contains($video->id))
                                         @if(Auth::user()->videos->find($video->id)->pivot->completado)
                                             <?php $validacion = "success" ?>
