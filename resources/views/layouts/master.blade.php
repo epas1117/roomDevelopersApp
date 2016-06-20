@@ -3,37 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>roomDevelopers</title>
-
     {!!Html::style('css/bootstrap.css')!!}
     {!!Html::style('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')!!}
     {!!Html::style('css/estilosrd.css')!!}
     {!!Html::style('https://fonts.googleapis.com/css?family=Alegreya+Sans')!!}
-    {!!Html::style('https://fonts.googleapis.com/css?family=Raleway')!!}
-
+    {!!Html::style('https://fonts.googleapis.com/css?family=Lato')!!}
 </head>
 <body>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '1757216561229850',
-            xfbml      : true,
-            version    : 'v2.6'
-        });
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
 <header>
-    <nav class="navbar   navbar-static-top">
+    <nav class="navbar navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-
                 <button type="button" class="navbar-toggle  collapsed" data-toggle="collapse"
                         data-target="#navegacion-rd">
                     <span class="sr-only">Desplegar / Ocultar Menu</span>
@@ -42,22 +22,19 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="{{URL::to('/tutorial')}}" class="navbar-brand">
-                    <img src="{{asset("images/rd.png")}}" id="modificarLogo"/>
+                    <img src="{{asset("images/rd.png")}}" class="img-responsive" id="modificarLogo"/>
                 </a>
-
-                <a href="{{URL::to('/tutorial')}}" class="navbar-brand"></a>
-
             </div>
             <!--Inicia menu-->
             <div class="collapse navbar-collapse" id="navegacion-rd">
                 <ul class="nav navbar-nav pull-right">
                     @if(!Auth::check())
-                        <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign up</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#logInModal">Log in</a></li>
-                      @else
-                        <li><a href="{{URL::to('usuario/perfil')}}">{{Auth::user()->name}}</a></li>
-                        <li>{{Auth::user()->name}}</li>
-
+                        <li><a class="text-center" href="#" data-toggle="modal"
+                               data-target="#signUpModal"style="color: #ffffff;">Regístrate</a></li>
+                        <li><a class="text-center" href="#" data-toggle="modal" data-target="#logInModal"style="color: #FFFFFF" >Inicia
+                                Sesión</a></li>
+                    @else
+                        <li><a class="text-center" href="{{URL::to('usuario/perfil')}}">{{Auth::user()->name}}</a></li>
                     @endif
                 </ul>
             </div>
@@ -69,12 +46,36 @@
     @yield('content')
 </section>
 
-
+<footer>
+<nav class="navbar navbar-static-top navbar-bottom">
+    <div class="container">
+        <div class="row">
+            <div id="navbarc" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#" style="color: #ffffff">Principal</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false" style="color: #ffffff">Acerca de roomDevelopers<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" style="color: #ffffff" >Pagina Web</a></li>
+                            <li><a href="#" style="color: #ffffff">Equipo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact" style="color: #ffffff">Contáctenos</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+</footer>
 {!!Html::script('js/jquery.min.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}
 {!!Html::script('js/scriptsrd.js')!!}
+{!!Html::script('js/iframeApi.js')!!}
 @include('usuario.signUpModal')
 @include('usuario.logInModal')
 @show
+
+
 </body>
 </html>

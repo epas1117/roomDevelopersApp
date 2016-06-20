@@ -8,7 +8,7 @@
                 <li class="sidebar-search">
                     {!!Form::open(['route'=> ['tutorial.filterTitulo'],'method'=>'GET'])!!}
                     <div class="input-group" id="modificarSearch">
-                        <input name="buscar" type="text" class="form-control" placeholder="Search...">
+                        <input name="buscar" type="text" class="form-control" placeholder="Buscar...">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -19,7 +19,7 @@
                             <!-- /input-group -->
                 </li>
                 <li class="sidebar-brand">
-                    <h2 style="font-weight: bold;text-decoration: underline;">Categories</h2>
+                    <h2 style="font-weight: bold;text-decoration: underline;">Categorias</h2>
                 </li>
                 @foreach($categorias as $categoria)
                     <li>
@@ -35,7 +35,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                     </div>
                 </div>
                 <div class="row">

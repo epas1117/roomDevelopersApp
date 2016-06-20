@@ -82,13 +82,11 @@ class VideoController extends Controller
 
     public function videosPorTutorial($tutorial_id)
     {
-
         $videos = DB::table('secciones')
             ->join('videos', 'secciones.id', '=', 'videos.seccion_id')
             ->select('videos.*')
             ->where('secciones.tutorial_id', '=', $tutorial_id)
             ->paginate(1);
         return view('video.mostrarVideos', compact('videos', 'tutorial_id'));
-
     }
 }

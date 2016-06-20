@@ -17,20 +17,12 @@ use Illuminate\Routing\Route;
 class UsuarioController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     public function index()
     {
-        //$users = User::onlyTrashed()->paginate(2);
         $users = User::paginate(2);
         return view('usuario.index', compact('users'));
     }
 
-    //Muestra el perfil de la pagina lo controla
     public function mostrarPerfil()
     {
         $tutorialesCompletados = $this->tutorialesCompletados();
@@ -121,7 +113,6 @@ class UsuarioController extends Controller
         $user->save();
         Session::flash('message', 'Usuario editado correctamente');
         return Redirect::to('\usuario');
-
     }
 
     /**
@@ -138,9 +129,6 @@ class UsuarioController extends Controller
         return Redirect::to('\usuario');
     }
 
-    /**
-     * Crear metodo para contar registros
-     */
     public function tutorialesCompletados()
     {
         $tutorialesCompletados = array();// variable que guarda lo que va a retornar
@@ -150,9 +138,7 @@ class UsuarioController extends Controller
                 array_push($tutorialesCompletados, $tutorial);
             }
         }
-
         return $tutorialesCompletados;
-
     }
 
 
@@ -193,7 +179,6 @@ class UsuarioController extends Controller
         return $completed;
     }
 
-
     public function contiene($videoEncontrar, $videos)
     {
         foreach ($videos as $video) {
@@ -206,12 +191,35 @@ class UsuarioController extends Controller
 
     public function guardarVideoUsuario(Request $request)
     {
-        if ($request->has('check')) {
+        /*if ($request->has('check')) {
             Auth::user()->videos()->attach($request->input('video_id'));
         } else {
             Auth::user()->videos()->detach($request->input('video_id'));
+        }*/
+        if ($request->ajax()) {
+            Auth::user()->videos()->attach($request->input('videoId'),['tiempo'=>0,'completado'=>false]);
+        }
+        return Redirect::back();
+    }
+
+    public function modificarVideoUsuario(Request $request, $videoId)
+    {
+        if ($request->ajax()) {
+                Auth::user()->videos()->updateExistingPivot($videoId,['tiempo'=>$request->input('tiempo')]);
         }
 
         return Redirect::back();
     }
+    public function finVideoUsuario(Request $request, $videoId)
+    {
+        if ($request->ajax()) {
+                Auth::user()->videos()->updateExistingPivot($videoId,['completado'=>true, 'tiempo'=>0]);
+        }
+
+        return Redirect::back();
+    }
+
+    
+
+
 }

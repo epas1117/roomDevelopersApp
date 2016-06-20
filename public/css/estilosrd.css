@@ -1,9 +1,8 @@
 header {
-    background: #31475A;
+    background: #5b6bc5;
     color: #000000;
-    height: 60px;
+    height: 80px;
     font-size: 30px;
-
 }
 .btn-facebook {
     color: #fff;
@@ -18,27 +17,34 @@ header {
 body {
     background: #ffffff;
 }
+#imagenInicial{
+    background: url('http://mobo.co.uk/wp-content/uploads/2014/11/Website-Design-Background.png');
+    background-size: cover;
+}
+#textoFinal{
+    text-align: center;
+
+}
+
+.navbar-bottom {
+    min-height: 100px;
+    margin-top: 210px;
+    background: #5b6bc5;
+    padding-top: 35px;
+    margin-top: 282px;
+}
+#colores{
+    color: #ffffff;
+}
 
 /*Pone estilo y movimiento en la animacion */
 #anim {
-    -webkit-animation-name: movimiento-diagonal; /*inicia el movimiento */
-    -webkit-animation-duration: 3s; /*tiempo que se demora en ir y regresar */
-    -webkit-animation-iteration-count: infinite; /*para que siga realizando la iteracion */
-    -webkit-animation-direction: alternate; /*para que vuelva a su posicion inicial */
-    color: #a5B6C3; /*color de la letraS */
+   text-align: center;
+    padding-bottom: 40px;
+    color: #ffffff; /*color de la letraS */
     position: relative; /*para que inicie en una posicion y regrese*/
 }
 
-@-webkit-keyframes movimiento-diagonal {
-    from {
-        margin-left: 0%;
-
-    }
-    to {
-        margin-left: 20%;
-
-    }
-}
 
 .jumbotron {
     background-color: #31475A;
@@ -86,7 +92,7 @@ aside {
     z-index: 1000;
     left: 250px;
     width: 0;
-    height: 100%;
+    height: 152%;
     margin-left: -250px;
     overflow-y: auto;
     background: #31475A;
@@ -97,6 +103,7 @@ aside {
     margin-top: -20px;
     position: absolute;
     color: #A5B6C3;
+
 
 }
 
@@ -219,13 +226,13 @@ td > a {
         font-weight: bold;
         width: 400px;
         height: 100px;
-        background-color: #33A3CD;
+        background-color: #c0c0c0;
         font-size: 24px;
         margin-right: 30px;
         cursor: pointer;
         border: 0;
         border-radius: 100px;
-        color: #A5B6C3;
+        color: #FFFFFF;
         /* propiedades para la animacion del boton */
         transition: all 0.20s linear;
         -webkit-transition: all 0.20s linear;
@@ -247,6 +254,8 @@ td > a {
         -webkit-animation-name: deslizarTitulo;
         -webkit-animation-duration: 3s;
         visibility: visible;
+        color:#FFFFFF;
+
     }
 
     /* Da animacion y escoge el % en la pantalla*/

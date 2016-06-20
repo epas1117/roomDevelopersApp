@@ -10,21 +10,11 @@ use Auth;
 class User extends Authenticatable
 {
     use SoftDeletes;
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
 
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -40,7 +30,7 @@ class User extends Authenticatable
 
     public function videos()
     {
-        return $this->belongsToMany('Cinema\Video');
+        return $this->belongsToMany('Cinema\Video')->withPivot('tiempo', 'completado');
     }
 
     public function porcentaje($tutorial_id)
@@ -78,5 +68,4 @@ class User extends Authenticatable
         }
         return false;
     }
-
 }

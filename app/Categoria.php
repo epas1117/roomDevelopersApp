@@ -12,7 +12,5 @@ class Categoria extends Model
     public function categoria()
     {
         return $this->hasMany('Cinema\Tutorial');
-
     }
-
 }

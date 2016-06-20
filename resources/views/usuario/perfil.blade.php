@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm-12" align="center">
                 <div id="moverBoton">
-                    <a href="{{URL::to('tutorial/logout')}}" class="btn btn-info" id="botonSalir">LOGOUT</a>
+                    <a href="{{URL::to('tutorial/logout')}}" class="btn btn-info" id="botonSalir">Salir</a>
                 </div>
                 <img src="https://yt3.ggpht.com/-SN1RQ4kN5bM/AAAAAAAAAAI/AAAAAAAAAAA/T39gSKk4e2g/s88-c-k-no-rj-c0xffffff/photo.jpg"
                      id="nttLogo" class="img-circle">
@@ -22,7 +22,7 @@
             <div class="col-xs-12" align="center">
                 <button type="button" class="btn btn-default" id="NegrillasPalabras" data-toggle="collapse"
                         data-target="#videosCompletados">
-                    Completed Tutorials
+                    Tutoriales Completados
                 </button>
                 <div id="videosCompletados" class="collapse">
                     @foreach($tutorialesCompletados as $tutorialCompletado)
@@ -58,17 +58,17 @@
             <div class="col-xs-12" align="center">
                 <button type="button" class="btn btn-default" id="NegrillasPalabras" data-toggle="collapse"
                         data-target="#videosProgreso">
-                    In progress
+                    En progreso
                 </button>
                 <div id="videosProgreso" class="collapse">
                     @foreach($tutorialesEnProgreso as $tutorialEnProgreso)
                         <div class="row">
                             <div class="col-xs-4" align="center">
-                                <h4 id="NegrillasPalabras">Tutorials</h4>
+                                <h4 id="NegrillasPalabras">Tutoriales</h4>
                                 <h5>{{$tutorialEnProgreso->titulo}}</h5>
                             </div>
                             <div class="col-xs-4" align="center">
-                                <h4 id="NegrillasPalabras">Progress</h4>
+                                <h4 id="NegrillasPalabras">Progreso</h4>
                                 <div class="progress">
                                     <div class="progress-bar" id="modificarProgreso" role="progressbar"
                                          aria-valuenow="100"
@@ -79,9 +79,9 @@
                                 </div>
                             </div>
                             <div class="col-xs-4" align="center">
-                                <h4 id="NegrillasPalabras">Incomplete</h4>
+                                <h4 id="NegrillasPalabras">Incompleto</h4>
                                 <a href="{{URL::to('tutorial/'.$tutorialEnProgreso->id)}}" class="btn btn-info btn-sm">
-                                    GO!
+                                    IR!
                                 </a>
                             </div>
                         </div>
