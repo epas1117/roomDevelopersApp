@@ -2,11 +2,15 @@
 
 namespace Cinema\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Redirect;
 use Cinema\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use Cinema\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Laravel\Socialite\Facades\Socialite;
+use Log;
 
 class AuthController extends Controller
 {
@@ -69,4 +73,30 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->scopes(['public_profile', 'email'])->redirect();
+    }
+
+    public function handleProviderCallback()
+    {
+        $userFace = Socialite::driver('facebook')->user();
+        $userBase=User::where('email',$userFace->getId())->first();
+
+        if($userBase){
+            Auth::login($userBase);
+        }else{
+            $userCreate=User::create([
+                "name" => $userFace->getName(),
+                "email" => $userFace->getId(),
+                "password" => $userFace->getId(),
+            ]);
+            Auth::login($userCreate);
+        }
+        return Redirect::to('tutorial');
+
+    }
+
 }

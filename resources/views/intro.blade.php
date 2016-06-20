@@ -5,7 +5,7 @@
 @include('alerts.errors')
         <!--Container ayuda a centrar todas las cosas, Carga Video columna de 6 -->
 <body id="imagenInicial">
-<h1 id="anim" style="padding-top: 80px">Aprende con miles de videos online</h1>
+<h1 id="anim" style="padding-top: 60px">Aprende con miles de videos online</h1>
 <div class="row" style="padding-bottom: 100px">
     <section class="videoPrincipal  col-md-6 ">
         <div class="flex-video widescreen" align="center" style="margin: 0 auto;text-align:right;">
@@ -21,4 +21,6 @@
     </section>
 </div>
 </body>
+
+
 @endsection

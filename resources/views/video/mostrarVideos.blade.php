@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <div id="wrapper">
-        <div id="sidebar-wrapper">
+        <div id="sidebar-wrapper" style=" height: 100%">
             <ul class="sidebar-nav">
                 @foreach($videos as $video)
                     <li>
@@ -47,9 +47,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-6">
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                         <a href="{{URL::to('tutorial/'.$tutorial_id)}}" class="btn btn-primary btn-md">
-                            GO BACK!!!
+                            Volver!!!
                         </a>
                     </div>
                 </div>
