@@ -19,7 +19,7 @@
                             <!-- /input-group -->
                 </li>
                 <li class="sidebar-brand">
-                    <h2 style="font-weight: bold;text-decoration: underline;">Categorias</h2>
+                    <h1>Categor&iacute;as</h1>
                 </li>
                 @foreach($categorias as $categoria)
                     <li>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="row">
                     @foreach($tutoriales as $tutorial)
-                        <div class="col-xs-6 col-sm-3">
+                        <div class="col-xs-4 col-sm-3 col-lg-4">
                             <div class="thumbnail">
                                 <a href="{{URL::to('tutorial/'.$tutorial->id)}}"><img
                                             src="{{asset("images/".$tutorial->imagen)}}"
