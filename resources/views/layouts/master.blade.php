@@ -47,21 +47,7 @@
     @yield('content')
 </section>
 
-<footer>
-    <nav class="navbar navbar-bottom">
-        <div class="container">
-            <div class="row">
-                <div id="navbarc" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Principal</a></li>
-                        <li><a href="#contact" style="color: #ffffff">Acerca de</a></li>
-                        <li><a href="#contact" style="color: #ffffff">Contáctenos</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-</footer>
+
 {!!Html::script('js/jquery.min.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}
 {!!Html::script('js/scriptsrd.js')!!}
