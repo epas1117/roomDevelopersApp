@@ -17,7 +17,8 @@
     </div>
     <div id="accordion" role="tablist" aria-multiselectable="true">
         <?php
-        $cont = 1
+        $cont = 1;
+        $col = 'collapse in'
         ?>
         @foreach($tutorial->secciones as $seccion)
             <div class="panel panel-default ">
@@ -29,7 +30,7 @@
                         </a>
                     </h4>
                 </div>
-                <div id="collapse{{$seccion->id}}" class="panel-collapse collapse table-responsive"
+                <div id="collapse{{$seccion->id}}" class="panel-collapse collapse table-responsive {{$col}}"
                      role="tabpanel"
                      aria-labelledby="heading{{$seccion->id}}">
                     <table class="table table-hover">
@@ -59,7 +60,8 @@
                                 <td class="{{$validacion}}"><p>{{$video->duracion}} Minutos</p></td>
                             </tr>
                             <?php
-                            $cont++
+                            $cont++;
+                            $col = '';
                             ?>
                         @endforeach
                         </tbody>
