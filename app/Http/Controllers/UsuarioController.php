@@ -219,6 +219,7 @@ class UsuarioController extends Controller
         return Redirect::back();
     }
 
+    
 
 
 }

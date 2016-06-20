@@ -55,7 +55,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Principal</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acerca de roomDevelopers<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Acerca de roomDevelopers<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Pagina Web</a></li>
                             <li><a href="#">Equipo</a></li>
