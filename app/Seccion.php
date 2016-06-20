@@ -13,5 +13,5 @@ class Seccion extends Model
     {
         return $this->hasMany('Cinema\Video');
     }
-   
+
 }

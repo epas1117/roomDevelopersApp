@@ -73,6 +73,7 @@
 {!!Html::script('js/jquery.min.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}
 {!!Html::script('js/scriptsrd.js')!!}
+{!!Html::script('js/iframeApi.js')!!}
 @include('usuario.signUpModal')
 @include('usuario.logInModal')
 @show

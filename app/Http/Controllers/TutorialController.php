@@ -19,7 +19,6 @@ class TutorialController extends Controller
 
     public function filterCategoria($categoria_id)
     {
-        //$tutoriales = DB::table('tutoriales')->where('categoria_id', '=', $categoria_id)->get();
         $tutoriales = Tutorial::where('categoria_id', '=', $categoria_id)->get();
         $categorias = Categoria::all();
         return view('tutorial.index', array('tutoriales' => $tutoriales, 'categorias' => $categorias));
