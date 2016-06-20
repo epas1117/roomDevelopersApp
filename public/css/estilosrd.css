@@ -1,33 +1,25 @@
 header {
-    background: #31475A;
-    color: #000000;
-    height: 60px;
-    font-size: 30px;
-
-}
-
-.navbar {
-    color: #FFFFFF;
+    background: #0375b4;
 }
 
 body {
     background: #ffffff;
+    font-family: 'Lato', sans-serif;
 }
-#imagenInicial{
+
+#imagenInicial {
     background: url('http://mobo.co.uk/wp-content/uploads/2014/11/Website-Design-Background.png');
     background-size: cover;
 }
-#textoFinal{
+
+#textoFinal {
     text-align: center;
 
 }
 
 .navbar-bottom {
-    min-height: 100px;
-    margin-top: 140px;
-    background-color:#C0C0C0;
-    padding-top: 20px;
-    color:#000000;
+    background-color: #3cc47c;
+    color: #FFFFFF;
 }
 
 /*Pone estilo y movimiento en la animacion */
@@ -65,7 +57,7 @@ aside {
 .main {
 
     margin-top: 20px;
-    margin-bottom: 20px;
+
 }
 
 .navbar {
@@ -108,7 +100,6 @@ aside {
     margin-top: -20px;
     position: absolute;
     color: #A5B6C3;
-
 
 }
 
@@ -195,7 +186,6 @@ td > a {
 
     #sidebar-wrapper {
         width: 250px;
-
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -214,14 +204,12 @@ td > a {
 
     #contenedorPerfil {
         padding: 20px;
-        background-color:  #31475A;
-        color: #a5B6C3;
+        background-color: #33a3cd;
     }
 
     #contenedorVer {
         padding: 20px;
-        background-color: #31475A;
-        color: #a5B6C3;
+        background-color: #33a3cd;
     }
 
     #NegrillasPalabras {
@@ -361,7 +349,7 @@ td > a {
 .radio .cr {
     position: relative;
     display: inline-block;
-    border: 1px solid #a5B6C3;
+    border: 1px solid #a9a9a9;
     border-radius: .25em;
     width: 1.3em;
     height: 1.3em;
@@ -414,19 +402,18 @@ td > a {
 }
 
 .video {
-    position:relative;
-    width:100%;
-    height:0;
-    padding-bottom:56%;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56%;
 }
 
 .video iframe {
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
-
 
 /*FIN CHECKBOXES*/
