@@ -1,47 +1,45 @@
 header {
-    background: #0375b4;
+    background: #5b6bc5;
+    color: #000000;
+    height: 80px;
+    font-size: 30px;
+}
+
+.navbar {
+    color: #FFFFFF;
 }
 
 body {
     background: #ffffff;
-    font-family: 'Lato', sans-serif;
 }
-
-#imagenInicial {
+#imagenInicial{
     background: url('http://mobo.co.uk/wp-content/uploads/2014/11/Website-Design-Background.png');
     background-size: cover;
 }
-
-#textoFinal {
+#textoFinal{
     text-align: center;
 
 }
 
 .navbar-bottom {
-    background-color: #3cc47c;
-    color: #FFFFFF;
+    min-height: 100px;
+    margin-top: 210px;
+    background: #5b6bc5;
+    padding-top: 35px;
+    margin-top: 282px;
+}
+#colores{
+    color: #ffffff;
 }
 
 /*Pone estilo y movimiento en la animacion */
 #anim {
-    -webkit-animation-name: movimiento-diagonal; /*inicia el movimiento */
-    -webkit-animation-duration: 3s; /*tiempo que se demora en ir y regresar */
-    -webkit-animation-iteration-count: infinite; /*para que siga realizando la iteracion */
-    -webkit-animation-direction: alternate; /*para que vuelva a su posicion inicial */
-    color: #a5B6C3; /*color de la letraS */
+   text-align: center;
+    padding-bottom: 40px;
+    color: #ffffff; /*color de la letraS */
     position: relative; /*para que inicie en una posicion y regrese*/
 }
 
-@-webkit-keyframes movimiento-diagonal {
-    from {
-        margin-left: 0%;
-
-    }
-    to {
-        margin-left: 20%;
-
-    }
-}
 
 .jumbotron {
     background-color: #31475A;
@@ -57,7 +55,7 @@ aside {
 .main {
 
     margin-top: 20px;
-
+    margin-bottom: 20px;
 }
 
 .navbar {
@@ -89,7 +87,7 @@ aside {
     z-index: 1000;
     left: 250px;
     width: 0;
-    height: 100%;
+    height: 152%;
     margin-left: -250px;
     overflow-y: auto;
     background: #31475A;
@@ -100,6 +98,7 @@ aside {
     margin-top: -20px;
     position: absolute;
     color: #A5B6C3;
+
 
 }
 
@@ -120,7 +119,6 @@ td > a {
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
-
 }
 
 /* Sidebar Styles */
@@ -251,6 +249,7 @@ td > a {
         -webkit-animation-name: deslizarTitulo;
         -webkit-animation-duration: 3s;
         visibility: visible;
+        color:#FFFFFF;
 
     }
 
@@ -399,21 +398,6 @@ td > a {
 
 .titulo {
     text-align: left;
-}
-
-.video {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56%;
-}
-
-.video iframe {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
 }
 
 /*FIN CHECKBOXES*/
