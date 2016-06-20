@@ -4,7 +4,6 @@
     <list default="true" id="0e4c6f24-18e5-41da-b310-64fd474360ed" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/intro.blade.php" afterPath="$PROJECT_DIR$/resources/views/intro.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tutorial/detalle.blade.php" afterPath="$PROJECT_DIR$/resources/views/tutorial/detalle.blade.php" />
     </list>
     <ignored path="App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +48,8 @@
       <file leaf-file-name="intro.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/intro.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+            <state relative-caret-position="378">
+              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -613,7 +612,7 @@
       <workItem from="1466393742446" duration="3822000" />
       <workItem from="1466397973496" duration="604000" />
       <workItem from="1466399821234" duration="967000" />
-      <workItem from="1466402602662" duration="2517000" />
+      <workItem from="1466402602662" duration="2750000" />
     </task>
     <task id="LOCAL-00001" summary="Migracion, modelo y controlador (Categoria y tutorial)">
       <created>1462477101302</created>
@@ -720,11 +719,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466403432836</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="PUSHH FINAL">
+      <created>1466406024709</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1466406024709</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91483000" />
+    <option name="totallyTimeSpent" value="91716000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1127,8 +1133,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/intro.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+        <state relative-caret-position="378">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding />
         </state>
       </provider>
