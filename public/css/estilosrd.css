@@ -1,8 +1,9 @@
 header {
-    background: #5b6bc5;
+    background: #31475A;
     color: #000000;
-    height: 80px;
+    height: 60px;
     font-size: 30px;
+
 }
 .btn-facebook {
     color: #fff;
@@ -28,23 +29,32 @@ body {
 
 .navbar-bottom {
     min-height: 100px;
-    margin-top: 210px;
-    background: #5b6bc5;
-    padding-top: 35px;
-    margin-top: 282px;
-}
-#colores{
-    color: #ffffff;
+    margin-top: 140px;
+    background-color:#C0C0C0;
+    padding-top: 20px;
+    color:#000000;
 }
 
 /*Pone estilo y movimiento en la animacion */
 #anim {
-   text-align: center;
-    padding-bottom: 40px;
-    color: #ffffff; /*color de la letraS */
+    -webkit-animation-name: movimiento-diagonal; /*inicia el movimiento */
+    -webkit-animation-duration: 3s; /*tiempo que se demora en ir y regresar */
+    -webkit-animation-iteration-count: infinite; /*para que siga realizando la iteracion */
+    -webkit-animation-direction: alternate; /*para que vuelva a su posicion inicial */
+    color: #a5B6C3; /*color de la letraS */
     position: relative; /*para que inicie en una posicion y regrese*/
 }
 
+@-webkit-keyframes movimiento-diagonal {
+    from {
+        margin-left: 0%;
+
+    }
+    to {
+        margin-left: 20%;
+
+    }
+}
 
 .jumbotron {
     background-color: #31475A;
@@ -92,7 +102,7 @@ aside {
     z-index: 1000;
     left: 250px;
     width: 0;
-    height: 152%;
+    height: 100%;
     margin-left: -250px;
     overflow-y: auto;
     background: #31475A;
@@ -124,6 +134,7 @@ td > a {
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
+
 }
 
 /* Sidebar Styles */
@@ -189,6 +200,7 @@ td > a {
 
     #sidebar-wrapper {
         width: 250px;
+
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -207,12 +219,14 @@ td > a {
 
     #contenedorPerfil {
         padding: 20px;
-        background-color: #33a3cd;
+        background-color:  #31475A;
+        color: #a5B6C3;
     }
 
     #contenedorVer {
         padding: 20px;
-        background-color: #33a3cd;
+        background-color: #31475A;
+        color: #a5B6C3;
     }
 
     #NegrillasPalabras {
@@ -254,7 +268,6 @@ td > a {
         -webkit-animation-name: deslizarTitulo;
         -webkit-animation-duration: 3s;
         visibility: visible;
-        color:#FFFFFF;
 
     }
 
@@ -353,7 +366,7 @@ td > a {
 .radio .cr {
     position: relative;
     display: inline-block;
-    border: 1px solid #a9a9a9;
+    border: 1px solid #a5B6C3;
     border-radius: .25em;
     width: 1.3em;
     height: 1.3em;
@@ -404,5 +417,21 @@ td > a {
 .titulo {
     text-align: left;
 }
+
+.video {
+    position:relative;
+    width:100%;
+    height:0;
+    padding-bottom:56%;
+}
+
+.video iframe {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+
 
 /*FIN CHECKBOXES*/
