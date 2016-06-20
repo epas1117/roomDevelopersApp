@@ -30,8 +30,9 @@
                 <ul class="nav navbar-nav pull-right">
                     @if(!Auth::check())
                         <li><a class="text-center" href="#" data-toggle="modal"
-                               data-target="#signUpModal"style="color: #ffffff;">Regístrate</a></li>
-                        <li><a class="text-center" href="#" data-toggle="modal" data-target="#logInModal"style="color: #FFFFFF" >Inicia
+                               data-target="#signUpModal" style="color: #ffffff;">Regístrate</a></li>
+                        <li><a class="text-center" href="#" data-toggle="modal" data-target="#logInModal"
+                               style="color: #FFFFFF">Inicia
                                 Sesión</a></li>
                     @else
                         <li><a class="text-center" href="{{URL::to('usuario/perfil')}}">{{Auth::user()->name}}</a></li>
@@ -47,26 +48,19 @@
 </section>
 
 <footer>
-<nav class="navbar navbar-static-top navbar-bottom">
-    <div class="container">
-        <div class="row">
-            <div id="navbarc" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#" style="color: #ffffff">Principal</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false" style="color: #ffffff">Acerca de roomDevelopers<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" style="color: #ffffff" >Pagina Web</a></li>
-                            <li><a href="#" style="color: #ffffff">Equipo</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contact" style="color: #ffffff">Contáctenos</a></li>
-                </ul>
+    <nav class="navbar navbar-bottom">
+        <div class="container">
+            <div class="row">
+                <div id="navbarc" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Principal</a></li>
+                        <li><a href="#contact" style="color: #ffffff">Acerca de</a></li>
+                        <li><a href="#contact" style="color: #ffffff">Contáctenos</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 </footer>
 {!!Html::script('js/jquery.min.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}

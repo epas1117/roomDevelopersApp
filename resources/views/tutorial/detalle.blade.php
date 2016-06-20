@@ -29,7 +29,8 @@
                         </a>
                     </h4>
                 </div>
-                <div id="collapse{{$seccion->id}}" class="panel-collapse collapse table-responsive" role="tabpanel"
+                <div id="collapse{{$seccion->id}}" class="panel-collapse collapse table-responsive"
+                     role="tabpanel"
                      aria-labelledby="heading{{$seccion->id}}">
                     <table class="table table-hover">
                         <tbody>

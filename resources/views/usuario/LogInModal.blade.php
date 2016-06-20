@@ -8,8 +8,8 @@
             </div>
             <div class="modal-body">
                 {!!Form::open(['route'=> ['usuario.log'],'method'=>'POST'])!!}
-                <div >
-                    <input name="email" type="text" class="form-control" placeholder="Email..."><br>
+                <div>
+                    <input name="email" type="text" class="form-control" placeholder="Email...">
                     <input name="password" type="password" class="form-control" placeholder="Password...">
                 </div>
                 <div class="modal-footer">

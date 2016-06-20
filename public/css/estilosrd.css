@@ -1,14 +1,12 @@
 header {
     background: #31475A;
     color: #000000;
-    height: 60px;
-    font-size: 30px;
-
 }
+
 .btn-facebook {
     color: #fff;
     background-color: #3b5998;
-    border-color: rgba(0,0,0,0.2);
+    border-color: rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -18,21 +16,21 @@ header {
 body {
     background: #ffffff;
 }
-#imagenInicial{
+
+#imagenInicial {
     background: url('http://mobo.co.uk/wp-content/uploads/2014/11/Website-Design-Background.png');
     background-size: cover;
 }
-#textoFinal{
+
+#textoFinal {
     text-align: center;
 
 }
 
 .navbar-bottom {
-    min-height: 100px;
-    margin-top: 140px;
-    background-color:#C0C0C0;
-    padding-top: 20px;
-    color:#000000;
+    background-color: #31475A;
+    color: #000000;
+
 }
 
 /*Pone estilo y movimiento en la animacion */
@@ -70,7 +68,7 @@ aside {
 .main {
 
     margin-top: 20px;
-    margin-bottom: 20px;
+
 }
 
 .navbar {
@@ -91,7 +89,6 @@ aside {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-
 }
 
 #wrapper.toggled {
@@ -102,7 +99,7 @@ aside {
     z-index: 1000;
     left: 250px;
     width: 0;
-    height: 100%;
+
     margin-left: -250px;
     overflow-y: auto;
     background: #31475A;
@@ -113,7 +110,6 @@ aside {
     margin-top: -20px;
     position: absolute;
     color: #A5B6C3;
-
 
 }
 
@@ -219,7 +215,7 @@ td > a {
 
     #contenedorPerfil {
         padding: 20px;
-        background-color:  #31475A;
+        background-color: #31475A;
         color: #a5B6C3;
     }
 
@@ -419,19 +415,18 @@ td > a {
 }
 
 .video {
-    position:relative;
-    width:100%;
-    height:0;
-    padding-bottom:56%;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56%;
 }
 
 .video iframe {
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
-
 
 /*FIN CHECKBOXES*/

@@ -3,7 +3,7 @@
 
     <div id="wrapper">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+        <div id="sidebar-wrapper" style="height: 116%;">
             <ul class="sidebar-nav">
                 <li class="sidebar-search">
                     {!!Form::open(['route'=> ['tutorial.filterTitulo'],'method'=>'GET'])!!}

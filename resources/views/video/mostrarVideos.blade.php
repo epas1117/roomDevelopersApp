@@ -1,16 +1,16 @@
 @extends('layouts.master')
 @section('content')
     <div id="wrapper">
-        <div id="sidebar-wrapper" style=" height: 100%">
+        <div id="sidebar-wrapper" style=" height: 113%">
             <ul class="sidebar-nav">
                 @foreach($videos as $video)
                     <li>
-                        <h1 class="titulo">
+                        <h1 class="titulo text-center text-justify">
                             {{$video->titulo}}
                         </h1>
                     </li>
                     <li>
-                        <h4>
+                        <h4 class="text-center ">
                             {{$video->descripcion}}
                         </h4>
                     </li>
@@ -43,20 +43,16 @@
                 @endforeach
             </ul>
         </div>
-        <div id="page-content-wrapper">
+        <div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-3">
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                         <a href="{{URL::to('tutorial/'.$tutorial_id)}}" class="btn btn-primary btn-md">
                             Volver!!!
                         </a>
                     </div>
-                </div>
-                <div class="row">
-                    <div class=" col-xs-12" align="center">
-                        {!!$videos->render()!!}
-                    </div>
+
                 </div>
                 @foreach($videos as $video)
                     <div class="row">
@@ -74,6 +70,9 @@
                         </section>
                     </div>
                 @endforeach
+                <div class="col-xs-12 text-center">
+                    {!!$videos->render()!!}
+                </div>
             </div>
         </div>
     </div>
