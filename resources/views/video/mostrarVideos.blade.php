@@ -67,7 +67,7 @@
                                        id="token">
                                 <div class="video">
                                     <iframe id="player" allowfullscreen="allowfullscreen"
-                                            src="{{'http://www.youtube.com/embed/'.$video->link.'?fs=1&autoplay=1&enablejsapi=1&hl=es&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&start='.($tiempo-5)}}"
+                                            src="{{'http://www.youtube.com/embed/'.$video->link.'?fs=1&autoplay=1&enablejsapi=1&hl=es&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&start='.$tiempo}}"
                                             frameborder="0"></iframe>
                                 </div>
                             </div>
