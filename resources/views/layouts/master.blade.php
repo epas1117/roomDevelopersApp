@@ -12,6 +12,23 @@
 
 </head>
 <body>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1757216561229850',
+            xfbml      : true,
+            version    : 'v2.6'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <header>
     <nav class="navbar   navbar-static-top">
         <div class="container">
@@ -37,9 +54,10 @@
                     @if(!Auth::check())
                         <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign up</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#logInModal">Log in</a></li>
-
-                    @else
+                      @else
                         <li><a href="{{URL::to('usuario/perfil')}}">{{Auth::user()->name}}</a></li>
+                        <li>{{Auth::user()->name}}</li>
+
                     @endif
                 </ul>
             </div>

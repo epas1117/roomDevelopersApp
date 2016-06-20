@@ -8,15 +8,18 @@
             </div>
             <div class="modal-body">
                 {!!Form::open(['route'=> ['usuario.store'],'method'=>'POST'])!!}
-                <div class="input-group">
+                <div >
                     <input name="name" type="text" class="form-control" placeholder="Your name...">
                     <input name="email" type="text" class="form-control" placeholder="Email...">
                     <input name="password" type="password" class="form-control" placeholder="Password...">
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-default" type="submit">
+                    <button class="btn btn-block" type="submit">
                         Sign Up
                     </button>
+                    <a class="btn btn-block btn-social btn-facebook" href="{{URL::to('auth/facebook')}}">
+                        <i class="fa fa-facebook"></i> Sign up with Facebook
+                    </a>
                 </div>
                 {!!Form::close()!!}
             </div>

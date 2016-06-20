@@ -156,6 +156,12 @@ return [
         Cinema\Providers\EventServiceProvider::class,
         Cinema\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+
+        /*
+         * Probando Facebook Providers...
+         */
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
     ],
 
     /*
@@ -203,7 +209,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
+        /*
+         * Probando Alias de Facebook
+         */
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

@@ -26,3 +26,7 @@ Route::resource('seccion', 'SeccionController');
 
 Route::get('video/tutorialVideo/{tutorial_id}', ['as' => 'video.tutorialVideo', 'uses' => 'VideoController@videosPorTutorial']);
 Route::resource('video', 'VideoController');
+
+//Rutas Facebook Login
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
